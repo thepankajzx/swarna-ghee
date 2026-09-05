@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Swarna Pure A2 Gir Cow Bilona Ghee | Swarna Natural Products</title>
+  <meta name="description" content="Shop Organic Bilona A2 Gir Cow Ghee handcrafted traditionally in pure brass and clay vessels with zero preservatives." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Playfair+Display:ital,wght@0,600..900;1,600..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="./images/logo.png" type="image/png" />
+</head>
+<body class="product-page-body">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Left Group: Menu Button + Gold Brand Name (Tight Spacing) -->
+      <div class="header-left">
+        <button class="nav-round-btn header-menu-btn" aria-label="Toggle Navigation Menu" onclick="window.openNavDrawer ? window.openNavDrawer() : document.getElementById('nav-drawer').classList.add('active')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-logo-clean">
+          <span class="brand-title">Swarna</span>
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="index.html#benefits">Benefits</a></li>
+          <li><a href="index.html#journey">Bilona Process</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="shop.html" class="nav-round-btn" aria-label="Search Products">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+        <button class="nav-round-btn wishlist-toggle-btn" aria-label="Wishlist" onclick="alert('Added to Saved Vault!')">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </button>
+        <button id="cart-btn" class="nav-round-btn cart-round-btn" aria-label="Shopping Bag" onclick="window.openCart ? window.openCart() : document.getElementById('cart-drawer').classList.add('active')">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Detail Showcase -->
+  <main class="pdp-container">
+    <div class="pdp-hero-grid">
+      <!-- Left Column: Gallery & Sticky Hero Image -->
+      <div class="pdp-gallery-col">
+        <div class="pdp-main-image-wrap">
+          <img id="pdp-main-img" src="./images/swarna-500ml.jpg" alt="Swarna Pure A2 Bilona Ghee" />
+          <span class="pdp-badge-gold">Best Seller</span>
+        </div>
+
+        <!-- Image Gallery Carousel / Scroller (Below Main Image) -->
+        <div class="pdp-gallery-strip">
+          <div class="pdp-thumb-card active" onclick="switchMainImage('./images/swarna-500ml.jpg', this)">
+            <img src="./images/swarna-500ml.jpg" alt="A2 Ghee Front View" />
+          </div>
+          <div class="pdp-thumb-card" onclick="switchMainImage('./images/swarna-250ml.jpg', this)">
+            <img src="./images/swarna-250ml.jpg" alt="A2 Ghee 250ml Pack" />
+          </div>
+          <div class="pdp-thumb-card" onclick="switchMainImage('./images/bilona-churning.jpg', this)">
+            <img src="./images/bilona-churning.jpg" alt="Vedic Bilona Churning" />
+          </div>
+          <div class="pdp-thumb-card" onclick="switchMainImage('./images/farm-cows.jpg', this)">
+            <img src="./images/farm-cows.jpg" alt="Ethical Gir Cows" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Product Info & Actions -->
+      <div class="pdp-info-section">
+        <h1 id="pdp-title" class="pdp-title">Organic Bilona A2 Gir Cow Ghee</h1>
+        
+        <!-- Sub-spec badge & SKU -->
+        <div class="pdp-spec-badge-row">
+          <span id="pdp-spec-tag" class="pdp-capsule-badge">100% VEDIC BILONA METHOD &bull; CULTURED CURD</span>
+          <span id="pdp-sku" class="pdp-sku-text">SKU: SW-A2-500</span>
+        </div>
+
+        <!-- Rating Row -->
+        <div class="pdp-rating-row">
+          <div class="stars-gold">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#EAB308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#EAB308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#EAB308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#EAB308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#EAB308"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <span class="pdp-rating-num">4.9</span>
+          <span class="pdp-rating-divider">&bull;</span>
+          <span class="pdp-rating-reviews">128 Verified Reviews</span>
+        </div>
+
+        <!-- Pricing Line -->
+        <div class="pdp-price-box">
+          <span id="pdp-price" class="pdp-current-price">₹1,099</span>
+          <span id="pdp-orig-price" class="pdp-orig-price">₹1,400</span>
+          <span id="pdp-discount" class="pdp-discount-pill">21% OFF</span>
+        </div>
+        <div class="pdp-tax-note">Inclusive of all taxes &bull; Pan-India Free Delivery</div>
+
+        <!-- Select Size -->
+        <div class="pdp-option-group">
+          <div class="pdp-option-header">
+            <span class="pdp-label-bold">SELECT JAR SIZE</span>
+            <span class="pdp-selected-sub">Airtight Glass Jar</span>
+          </div>
+          <div class="pdp-size-selector">
+            <button class="pdp-size-btn" onclick="selectPdpSize('250ml', 599, 750, '20% OFF', this)">250ml</button>
+            <button class="pdp-size-btn active" onclick="selectPdpSize('500ml', 1099, 1400, '21% OFF', this)">500ml</button>
+            <button class="pdp-size-btn" onclick="selectPdpSize('1000ml', 1999, 2500, '20% OFF', this)">1000ml (1L)</button>
+          </div>
+        </div>
+
+        <!-- Add to Bag & Buy Now CTA Buttons -->
+        <div class="pdp-cta-row">
+          <button id="pdp-add-btn" class="pdp-add-to-bag-btn" onclick="handlePdpAdd()">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span>ADD TO BAG</span>
+          </button>
+
+          <button id="pdp-buy-now-btn" class="pdp-buy-now-btn" onclick="handlePdpBuyNow()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>BUY NOW</span>
+          </button>
+        </div>
+
+        <!-- Trust Assurance & Guarantees Strip (Clickable with Arrows & Full Policies) -->
+        <div class="pdp-trust-grid">
+          <!-- Card 1: COD Terms & Charges -->
+          <div class="pdp-trust-card clickable" onclick="openPolicyModal('cod')" title="Click to view Cash on Delivery terms">
+            <div class="pdp-trust-left-group">
+              <div class="pdp-trust-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+              </div>
+              <div class="pdp-trust-text">
+                <strong>Cash on Delivery</strong>
+                <span>₹25 fee &bull; Pay at doorstep</span>
+              </div>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="pdp-trust-arrow">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+
+          <!-- Card 2: 7-Day Easy Return / Replacement Rules -->
+          <div class="pdp-trust-card clickable" onclick="openPolicyModal('returns')" title="Click to view Return & Replacement guidelines">
+            <div class="pdp-trust-left-group">
+              <div class="pdp-trust-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="1 4 1 10 7 10"></polyline>
+                  <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                </svg>
+              </div>
+              <div class="pdp-trust-text">
+                <strong>7-Day Easy Returns</strong>
+                <span>Damage & replacement terms</span>
+              </div>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="pdp-trust-arrow">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+
+          <!-- Card 3: Free Express Shipping -->
+          <div class="pdp-trust-card clickable" onclick="openPolicyModal('shipping')" title="Click to view dispatch details">
+            <div class="pdp-trust-left-group">
+              <div class="pdp-trust-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <div class="pdp-trust-text">
+                <strong>Free Express Shipping</strong>
+                <span>Dispatched in 24–48 hrs</span>
+              </div>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="pdp-trust-arrow">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+
+          <!-- Card 4: Authentic Vedic Quality -->
+          <div class="pdp-trust-card clickable" onclick="openPolicyModal('purity')" title="Click to view Purity guarantee">
+            <div class="pdp-trust-left-group">
+              <div class="pdp-trust-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+              <div class="pdp-trust-text">
+                <strong>100% Authentic A2</strong>
+                <span>Lab tested &bull; Vedic Churned</span>
+              </div>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="pdp-trust-arrow">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </div>
+
+        <!-- ═══ THE MATH OF AUTHENTICITY ═══════════════════════════ -->
+        <div class="math-section">
+          <span class="math-tag">Why It Costs What It Costs</span>
+          <div class="math-title" data-en="The Math of Authenticity" data-hi="प्रामाणिकता का गणित">The Math of Authenticity</div>
+          <div class="math-flow">
+            <div class="math-step">
+              <div class="math-step-icon">
+                <svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M200,80a72.08,72.08,0,0,0-64-71.28V8a8,8,0,0,0-16,0V8.72A72,72,0,0,0,56,80v24H40a8,8,0,0,0-8,8v88a48.05,48.05,0,0,0,48,48H176a48.05,48.05,0,0,0,48-48V112a8,8,0,0,0-8-8H200ZM72,80a56,56,0,0,1,112,0v24H72Zm136,112a32,32,0,0,1-32,32H80a32,32,0,0,1-32-32V120H208Z"/></svg>
+              </div>
+              <div class="math-step-val" data-en="1 Gir Cow" data-hi="1 गिर गाय">1 Gir Cow</div>
+              <div class="math-step-label" data-en="6–8L milk/day" data-hi="6–8 लीटर दूध/दिन">6–8L milk/day</div>
+            </div>
+            <div class="math-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(212,175,55,0.5)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <div class="math-step">
+              <div class="math-step-icon">
+                <svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"/></svg>
+              </div>
+              <div class="math-step-val" data-en="25–30 Litres" data-hi="25–30 लीटर">25–30 Litres</div>
+              <div class="math-step-label" data-en="of A2 milk needed" data-hi="A2 दूध चाहिए">of A2 milk needed</div>
+            </div>
+            <div class="math-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(212,175,55,0.5)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <div class="math-step">
+              <div class="math-step-icon">
+                <svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM40,112H88v32H40Zm64,0h112v32H104Zm-64,80V160H88v32H40Zm176,0H104V160h112ZM40,96V64H216V96Z"/></svg>
+              </div>
+              <div class="math-step-val" data-en="Curd → Bilona" data-hi="दही → बिलोना">Curd → Bilona</div>
+              <div class="math-step-label" data-en="Hand-churned overnight" data-hi="हाथ से रात भर मंथन">Hand-churned overnight</div>
+            </div>
+            <div class="math-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(212,175,55,0.5)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <div class="math-step">
+              <div class="math-step-icon">
+                <svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M252,116a28,28,0,0,1-28,28H164.49l9.43,55.17a4,4,0,0,1,0,.83,28,28,0,0,1-55.92,0,4,4,0,0,1,0-.83L127.43,144H32a28,28,0,0,1,0-56H127.43L118,32.83a4,4,0,0,1,0-.83A28,28,0,0,1,173.92,32a4,4,0,0,1,0,.83L164.49,88H224A28,28,0,0,1,252,116Z"/></svg>
+              </div>
+              <div class="math-step-val" data-en="Slow Flame" data-hi="धीमी आँच">Slow Flame</div>
+              <div class="math-step-label" data-en="Brass vessel, hours" data-hi="पीतल के बर्तन में">Brass vessel, hours</div>
+            </div>
+            <div class="math-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(212,175,55,0.5)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+            <div class="math-step">
+              <div class="math-step-icon">
+                <svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" style="color:#d4af37"><path d="M173.08,43.41A8,8,0,0,0,166.59,40H89.41a8,8,0,0,0-6.49,3.41l-56,80A8,8,0,0,0,28,136H84.61l-29.26,86.49A8,8,0,0,0,68,232a8,8,0,0,0,6.49-3.41l112-160A8,8,0,0,0,173.08,43.41Z"/></svg>
+              </div>
+              <div class="math-step-val" style="color:#d4af37" data-en="1 Jar of Swarna" data-hi="स्वर्ण का 1 जार">1 Jar of Swarna</div>
+              <div class="math-step-label" data-en="Pure liquid gold" data-hi="शुद्ध तरल सोना">Pure liquid gold</div>
+            </div>
+          </div>
+          <div class="math-footer">
+            <div class="math-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              3–4 days per batch
+            </div>
+            <div class="math-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              Zero machines
+            </div>
+            <span class="math-footer-text">That's why no factory can match it.</span>
+          </div>
+        </div>
+
+        <!-- ═══ PROCESS VIDEO PLACEHOLDER ══════════════════════════ -->
+        <div class="pdp-video-section">
+          <span class="pdp-video-label">Watch The Process</span>
+          <div class="video-placeholder" id="process-video-wrap">
+            <div class="video-placeholder-icon">
+              <svg width="28" height="28" viewBox="0 0 256 256" fill="currentColor" opacity="0.5"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg>
+            </div>
+            <p class="vid-title" data-en="Bilona Process — Behind the Scenes" data-hi="बिलोना प्रक्रिया — परदे के पीछे">Bilona Process — Behind the Scenes</p>
+            <p class="vid-sub">Video coming soon · Upload via Admin Panel</p>
+          </div>
+        </div>
+
+        <!-- Accordion Specifications (Exact Layout) -->
+        <div class="pdp-accordions-group">
+          <!-- Accordion 1: Nutrition & Specs -->
+          <div class="pdp-acc-item active">
+            <button class="pdp-acc-header" onclick="toggleAcc(this)">
+              <span>PURITY & INGREDIENT SPECS</span>
+              <span class="acc-symbol">−</span>
+            </button>
+            <div class="pdp-acc-body">
+              <p><strong>Ingredients:</strong> 100% Pure Cultured A2 Gir Cow Curd Butter.</p>
+              <p><strong>Method:</strong> Traditional Vedic Bilona Hand-Churning in clay and brass cookware.</p>
+              <p><strong>Nutrients:</strong> Rich in Omega-3, Omega-6, Butyric Acid, Vitamin A, D, E, and K2.</p>
+              <p><strong>Zero Additives:</strong> No chemicals, no preservatives, no palm oil, and zero trans fats.</p>
+            </div>
+          </div>
+
+          <!-- Accordion 2: Vedic Bilona Process -->
+          <div class="pdp-acc-item">
+            <button class="pdp-acc-header" onclick="toggleAcc(this)">
+              <span>VEDIC BILONA METHOD (5 STEPS)</span>
+              <span class="acc-symbol">+</span>
+            </button>
+            <div class="pdp-acc-body">
+              <p>1. Fresh A2 Gir Cow Milk boiled and cultured into probiotic curd.</p>
+              <p>2. Wooden Bilona churning in clockwise and anti-clockwise rhythm.</p>
+              <p>3. Fresh Makhan (cultured butter) extracted by hand.</p>
+              <p>4. Slow low-firewood heating in brass vessels until liquid gold appears.</p>
+              <p>5. Filtered with muslin cloth and packed in sterile glass jars.</p>
+            </div>
+          </div>
+
+          <!-- Accordion 3: 7-Day Returns & Purity Guarantee -->
+          <div class="pdp-acc-item">
+            <button class="pdp-acc-header" onclick="toggleAcc(this)">
+              <span>7-DAY RETURN & SATISFACTION GUARANTEE</span>
+              <span class="acc-symbol">+</span>
+            </button>
+            <div class="pdp-acc-body">
+              <p>We stand by the authenticity of every single jar. If you are not 100% satisfied with the natural aroma, granular texture, or purity of Swarna Ghee, enjoy a hassle-free replacement or full refund within 7 days.</p>
+            </div>
+          </div>
+
+          <!-- Accordion 4: Storage & Usage Care -->
+          <div class="pdp-acc-item">
+            <button class="pdp-acc-header" onclick="toggleAcc(this)">
+              <span>JAR STORAGE & USAGE CARE</span>
+              <span class="acc-symbol">+</span>
+            </button>
+            <div class="pdp-acc-body">
+              <p>Store in a cool, dry place away from direct sunlight. Refrigeration is not needed. Always use a clean, dry spoon to maintain long-lasting freshness and aroma.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full-Width Bottom Section: Related Superfoods -->
+    <div class="pdp-related-section">
+      <h3 class="related-heading">COMPLETE THE VEDIC PANTRY</h3>
+      <p class="related-sub">Curated traditional superfoods from Swarna Natural Products</p>
+      <a href="shop.html" class="related-view-all">VIEW ALL DROPS &rarr;</a>
+
+      <div class="modern-product-grid" style="margin-top: 20px;">
+        <div class="m-product-card" onclick="location.href='product.html?size=1000ml'">
+          <div class="m-card-image-wrap">
+            <img src="./images/swarna-500ml.jpg" alt="A2 Ghee 1000ml" class="m-card-img" />
+            <div class="m-card-bottom-badges">
+              <div class="m-rating-pill">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span class="m-rate-score">5.0</span>
+                <span class="m-divider">|</span>
+                <span class="m-rate-count">56</span>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="m-card-details">
+            <div class="m-price-line">
+              <span class="m-current-price">₹1,999</span>
+              <span class="m-orig-price">₹2,500</span>
+              <span class="m-discount-tag">20% off</span>
+            </div>
+            <div class="m-card-title">A2 Gir Cow Ghee &bull; 1000ml (1L)</div>
+          </div>
+        </div>
+
+        <div class="m-product-card" onclick="location.href='product.html?size=250ml'">
+          <div class="m-card-image-wrap">
+            <img src="./images/swarna-250ml.jpg" alt="A2 Ghee 250ml" class="m-card-img" style="object-fit: cover;" />
+            <div class="m-card-bottom-badges">
+              <div class="m-rating-pill">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span class="m-rate-score">4.8</span>
+                <span class="m-divider">|</span>
+                <span class="m-rate-count">38</span>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="m-card-details">
+            <div class="m-price-line">
+              <span class="m-current-price">₹599</span>
+              <span class="m-orig-price">₹750</span>
+              <span class="m-discount-tag">20% off</span>
+            </div>
+            <div class="m-card-title">A2 Gir Cow Ghee &bull; 250ml Starter</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-section-header">
+        <span class="comparison-tag">Questions, Answered</span>
+        <h2 class="comparison-title" data-en="Everything You'd Like To Know" data-hi="वह सब कुछ जो आप जानना चाहेंगे">Everything You'd Like To Know</h2>
+        <p class="comparison-subtitle" data-en="Still curious? Our ghee care team is always here to assist your wellness journey." data-hi="अभी भी उत्सुक हैं? हमारी घी देखभाल टीम आपकी वेलनेस यात्रा में सहायता के लिए हमेशा मौजूद है।">Still curious? Our ghee care team is always here to assist your wellness journey.</p>
+      </div>
+      <div class="faq-container">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-en="What makes Bilona Ghee different?" data-hi="बिलोना घी को क्या अलग बनाता है?">What makes Bilona Ghee different?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer" data-en="Traditional Bilona Ghee begins with cultured curd, which is churned with a wooden bilona to separate fresh butter and then slowly heated over low fire. This patient method gives the ghee its distinctive nutty aroma, granular texture, and superior bio-availability." data-hi="पारंपरिक बिलोना घी की शुरुआत कल्चर्ड दही से होती है, जिसे लकड़ी के बिलोना से मथा जाता है।">Traditional Bilona Ghee begins with cultured curd, which is churned with a wooden bilona to separate fresh butter and then slowly heated over low fire. This patient method gives the ghee its distinctive nutty aroma, granular texture, and superior bio-availability.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-en="Is Swarna ghee made only from indigenous (Desi) cows?" data-hi="क्या स्वर्ण घी केवल स्वदेशी गायों से बना है?">Is Swarna ghee made only from indigenous (Desi) cows?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer" data-en="Yes, absolutely. We source our milk exclusively from purebred, pasture-grazed Gir cows in Himachal Pradesh." data-hi="हाँ बिल्कुल।">Yes, absolutely. We source our milk exclusively from purebred, pasture-grazed Gir cows in Himachal Pradesh.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-en="Why does the texture change with the season?" data-hi="मौसम के साथ बनावट क्यों बदलती है?">Why does the texture change with the season?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer" data-en="Pure ghee melts in summer and solidifies in winter. The famous 'danedar' (granular) texture is a natural property of A2 Bilona ghee, proving it has not been homogenized or artificially stabilized." data-hi="शुद्ध घी गर्मियों में पिघल जाता है और सर्दियों में जम जाता है।">Pure ghee melts in summer and solidifies in winter. The famous 'danedar' (granular) texture is a natural property of A2 Bilona ghee, proving it has not been homogenized or artificially stabilized.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-en="Does it contain preservatives or artificial colors?" data-hi="क्या इसमें परिरक्षक या कृत्रिम रंग हैं?">Does it contain preservatives or artificial colors?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer" data-en="Zero. Swarna Ghee is 100% pure and natural, free from any preservatives, colors, or chemical additives." data-hi="शून्य। स्वर्ण घी 100% शुद्ध और प्राकृतिक है।">Zero. Swarna Ghee is 100% pure and natural, free from any preservatives, colors, or chemical additives.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  </main>
+
+  
+  
+      <!-- Site Ultra-Compact Footer -->
+    <!-- Site Ultra-Compact Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-compact-row">
+        <!-- Brand & Tagline -->
+        <div class="footer-brand-box">
+          <span class="footer-brand-name">Swarna</span>
+          <span class="footer-brand-tagline">100% Pure Vedic A2 Gir Cow Bilona Ghee</span>
+        </div>
+
+        <!-- Quick Links (Inline) -->
+        <div class="footer-nav-inline">
+          <a href="index.html">Home</a>
+          <span class="f-dot">&bull;</span>
+          <a href="product.html">Featured Drop</a>
+          <span class="f-dot">&bull;</span>
+          <a href="about.html">Our Story</a>
+          <span class="f-dot">&bull;</span>
+          <a href="verify.html">Our Promise</a>
+          <span class="f-dot">&bull;</span>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Help Pill -->
+        <div class="footer-action-box">
+          <a href="https://wa.me/917018168156?text=Hello%20Swarna%20Care,%20I%20need%20help%20with%20my%20order%20or%20products." 
+             class="footer-wa-card" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             aria-label="Contact Swarna Care on WhatsApp">
+            <div class="footer-wa-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.25-1.92 1.33-.5.08-1.15.11-3.69-.94-2.17-.9-3.57-3.11-3.68-3.26-.11-.15-.88-1.17-.88-2.23 0-1.06.56-1.58.76-1.8.2-.22.44-.28.59-.28.15 0 .3 0 .43.01.14.01.32-.05.5.39.19.46.65 1.58.71 1.7.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.25.25-.11.49.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.18 1.26z"/>
+              </svg>
+            </div>
+            <div class="footer-wa-text">
+              <span class="f-wa-title" data-en="Need Help?" data-hi="सहायता?">Need Help?</span>
+              <span class="f-wa-sub" data-en="Chat with us" data-hi="चैट करें">Chat with us</span>
+            </div>
+            <div class="footer-wa-arrow">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Line: Copyright & Admin -->
+      <div class="footer-bottom">
+        <div>© 2026 Swarna. All Rights Reserved. &bull; Himachal Pradesh</div>
+        <div class="footer-admin-wrap">
+          <a href="admin.html" class="footer-admin-link" title="Admin Portal">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <span>Admin</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Policy Guidelines Modal -->
+  <div id="policy-info-modal" class="policy-modal-overlay" onclick="closePolicyModal()">
+    <div class="policy-modal-card" onclick="event.stopPropagation()">
+      <div class="policy-modal-header">
+        <div id="policy-modal-title-wrap" class="policy-modal-title">
+          <span>Policy Guidelines</span>
+        </div>
+        <button class="nav-round-btn drawer-close-btn" onclick="closePolicyModal()" aria-label="Close modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div id="policy-modal-body" class="policy-content-list">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="policy-modal-footer">
+        <button class="modal-btn-dark" onclick="closePolicyModal()">Got It</button>
+        <a href="https://wa.me/917018168156" target="_blank" class="modal-btn-wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg>
+          <span>WhatsApp Care</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- Modern Atelier-Style Shopping Bag Drawer -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay" onclick="window.closeCart ? window.closeCart() : document.getElementById('cart-drawer').classList.remove('active')"></div>
+  <div id="cart-drawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-main-title">YOUR BAG</h2>
+      <button id="close-cart-btn" class="nav-round-btn cart-close-btn" aria-label="Close Bag" onclick="window.closeCart ? window.closeCart() : document.getElementById('cart-drawer').classList.remove('active')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-drawer-body" id="cart-drawer-body"></div>
+  </div>
+
+  <!-- Full-Screen Atelier-Style Slide-Out Navigation Drawer -->
+  <div id="nav-drawer-overlay" class="nav-drawer-overlay" onclick="window.closeNavDrawer ? window.closeNavDrawer() : document.getElementById('nav-drawer').classList.remove('active')"></div>
+  <div id="nav-drawer" class="nav-drawer-card">
+    <div class="nav-drawer-header">
+      <div class="drawer-brand-title">Swarna</div>
+      <button id="nav-drawer-close" class="nav-round-btn drawer-close-btn" aria-label="Close Menu" onclick="window.closeNavDrawer ? window.closeNavDrawer() : document.getElementById('nav-drawer').classList.remove('active')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Clean Normal Profile Card -->
+    <div class="drawer-vip-card" onclick="location.href='index.html#shop-collection'">
+      <div class="vip-user-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </div>
+      <div class="vip-info">
+        <div class="vip-title">My Profile & Orders</div>
+        <div class="vip-sub">Track orders & account details &rarr;</div>
+      </div>
+    </div>
+
+    <div class="drawer-section-label">NAVIGATION</div>
+    <div class="drawer-nav-list">
+      <a href="index.html" class="drawer-nav-item"><span class="d-item-text">LATEST DROPS (A2 GHEE)</span></a>
+      <a href="product.html?size=500ml" class="drawer-nav-item item-highlight"><span class="d-item-text">FEATURED DROP (500ML)</span><span class="drawer-badge-purple">POPULAR</span></a>
+      <a href="about.html" class="drawer-nav-item"><span class="d-item-text">OUR BILONA HERITAGE</span></a>
+      <a href="verify.html" class="drawer-nav-item"><span class="d-item-text">OUR PROMISE & VERIFY</span></a>
+      <a href="contact.html" class="drawer-nav-item"><span class="d-item-text">CONTACT CARE & DISPATCH</span></a>
+    </div>
+
+    <div class="drawer-section-label" style="margin-top: 24px;">ASSISTANCE & POLICIES</div>
+    <div class="drawer-grid-buttons">
+      <a href="contact.html" class="drawer-pill-btn"><span>7-Day Return</span></a>
+      <a href="contact.html" class="drawer-pill-btn"><span>Shipping/COD</span></a>
+      <a href="verify.html" class="drawer-pill-btn"><span>Lab Reports</span></a>
+      <a href="https://wa.me/917018168156" target="_blank" class="drawer-pill-btn"><span>WhatsApp</span></a>
+    </div>
+
+    <!-- Language Toggle -->
+    <div class="lang-toggle-wrap">
+      <span class="lang-toggle-label">Language</span>
+      <div class="lang-toggle-btns">
+        <button class="lang-btn active" id="lang-en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" id="lang-hi" onclick="setLanguage('hi')">हिंदी</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Compact Policy & Trust Info Modal -->
+  <div id="policy-info-modal" class="policy-modal-overlay" onclick="if(event.target===this)closePolicyModal()">
+    <div class="policy-modal-card">
+      <div class="policy-modal-header">
+        <div id="policy-modal-title-wrap" class="policy-modal-title-wrap"></div>
+        <button type="button" class="policy-modal-close" onclick="closePolicyModal()" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div id="policy-modal-body" class="policy-modal-body"></div>
+      <div class="policy-modal-footer">
+        <button type="button" class="policy-modal-ok-btn" onclick="closePolicyModal()">I UNDERSTAND &bull; CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // ── Hindi / English Toggle ──────────────────────────
+    function setLanguage(lang) {
+      document.documentElement.lang = lang === 'hi' ? 'hi' : 'en';
+      localStorage.setItem('swarna-lang', lang);
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = lang === 'hi' ? (el.dataset.hi || el.dataset.en) : el.dataset.en;
+      });
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      const btn = document.getElementById('lang-' + lang);
+      if (btn) btn.classList.add('active');
+    }
+    const savedLang = localStorage.getItem('swarna-lang') || 'en';
+    if (savedLang === 'hi') setLanguage('hi');
+
+    // ── Product Page Logic ──────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+      // Setup dynamic product fetching
+      fetch('/api/products').then(r => r.json()).then(data => {
+        if (data.media && data.media.process_video) {
+          const wrap = document.getElementById('process-video-wrap');
+          if (wrap) {
+            wrap.innerHTML = `<video src="${data.media.process_video}" autoplay muted loop playsinline></video>`;
+          }
+        }
+      }).catch(() => {});
+    });
+  </script>
+  <script>
+    let currentSelectedSize = '500ml';
+    let currentSelectedPrice = 1099;
+
+    function switchMainImage(src, thumbEl) {
+      document.getElementById('pdp-main-img').src = src;
+      document.querySelectorAll('.pdp-thumb-card').forEach(t => t.classList.remove('active'));
+      if (thumbEl) thumbEl.classList.add('active');
+    }
+
+    function selectPdpSize(size, price, origPrice, discount, btn) {
+      currentSelectedSize = size;
+      currentSelectedPrice = price;
+
+      const priceEl = document.getElementById('pdp-price');
+      if (priceEl) priceEl.textContent = '₹' + price.toLocaleString('en-IN');
+
+      const origPriceEl = document.getElementById('pdp-orig-price');
+      if (origPriceEl) origPriceEl.textContent = '₹' + origPrice.toLocaleString('en-IN');
+
+      const discountEl = document.getElementById('pdp-discount');
+      if (discountEl) discountEl.textContent = discount;
+
+      const skuEl = document.getElementById('pdp-sku');
+      if (skuEl) skuEl.textContent = 'SKU: SW-A2-' + size.replace('ml', '');
+
+      const mBarPrice = document.getElementById('m-bar-price-val');
+      if (mBarPrice) mBarPrice.textContent = '₹' + price.toLocaleString('en-IN');
+
+      const mBarSize = document.getElementById('m-bar-size-name');
+      if (mBarSize) mBarSize.textContent = size + ' Glass Jar';
+
+      document.querySelectorAll('.pdp-size-btn').forEach(b => b.classList.remove('active'));
+      if (btn) {
+        btn.classList.add('active');
+      }
+
+      // Automatically update main hero image based on selected jar size
+      const mainImg = document.getElementById('pdp-main-img');
+      const thumbCards = document.querySelectorAll('.pdp-thumb-card');
+      if (size === '250ml') {
+        if (mainImg) mainImg.src = './images/swarna-250ml.jpg';
+        thumbCards.forEach((t, i) => t.classList.toggle('active', i === 1));
+      } else if (size === '500ml') {
+        if (mainImg) mainImg.src = './images/swarna-500ml.jpg';
+        thumbCards.forEach((t, i) => t.classList.toggle('active', i === 0));
+      } else if (size === '1000ml') {
+        if (mainImg) mainImg.src = './images/swarna-1000ml.jpg';
+        thumbCards.forEach(t => t.classList.remove('active'));
+      }
+    }
+
+    function toggleAcc(btn) {
+      const currentItem = btn.parentElement;
+      const isAlreadyActive = currentItem.classList.contains('active');
+      
+      document.querySelectorAll('.pdp-acc-item').forEach(item => {
+        item.classList.remove('active');
+        const sym = item.querySelector('.acc-symbol');
+        if (sym) sym.textContent = '+';
+      });
+
+      if (!isAlreadyActive) {
+        currentItem.classList.add('active');
+        const symbol = btn.querySelector('.acc-symbol');
+        if (symbol) symbol.textContent = '−';
+      }
+    }
+
+    // Policy Modal Content with Color Coding & Emphasized Highlights
+    const policyData = {
+      cod: {
+        titleIcon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>',
+        titleText: 'Cash on Delivery (COD) Terms',
+        rules: [
+          {
+            type: 'rule-danger',
+            iconClass: 'icon-danger',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M6 3h12M6 8h12M6 13l8.5 8M6 13h3a4 4 0 0 0 0-8"/></svg>',
+            title: '<span class="hl-red">Nominal ₹25 COD Handling Fee</span>',
+            desc: 'A minimal <strong class="hl-red">₹25 courier verification fee</strong> applies on COD. Prepaid orders have <strong class="hl-green">100% Zero Extra Fees</strong>.'
+          },
+          {
+            type: 'rule-success',
+            iconClass: 'icon-success',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>',
+            title: '<span class="hl-green">Instant WhatsApp & SMS Verification</span>',
+            desc: 'You will receive an <strong class="hl-green">instant OTP verification message</strong> right after ordering to confirm dispatch.'
+          },
+          {
+            type: 'rule-success',
+            iconClass: 'icon-success',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
+            title: '<span class="hl-dark">Doorstep Payment (Cash or UPI QR)</span>',
+            desc: 'Pay courier rider via <strong class="hl-green">Cash or scan GPay / PhonePe / Paytm QR</strong> upon delivery.'
+          },
+          {
+            type: 'rule-warning',
+            iconClass: 'icon-warning',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>',
+            title: '<span class="hl-amber">Cancellation Window (12 Hours Only)</span>',
+            desc: 'Please notify us <strong class="hl-red">within 12 hours</strong> before the fresh batch is dispatched.'
+          }
+        ]
+      },
+      returns: {
+        titleIcon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>',
+        titleText: '7-Day Return & Replacement Terms',
+        rules: [
+          {
+            type: 'rule-success',
+            iconClass: 'icon-success',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="m7.5 4.27 9 5.15M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>',
+            title: '<span class="hl-green">Free Instant Replacement for Transit Damage</span>',
+            desc: 'If jar arrives broken/leaking, we send an <strong class="hl-green">Immediate Free Replacement within 24 hours</strong> without sending back broken glass.'
+          },
+          {
+            type: 'rule-warning',
+            iconClass: 'icon-warning',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>',
+            title: '<span class="hl-amber">Important: Unboxing Video Guideline</span>',
+            desc: 'Please record a <strong class="hl-dark">short unboxing video or outer parcel photos</strong> and WhatsApp us for <strong class="hl-green">instant 10-minute claim approval</strong>.'
+          },
+          {
+            type: 'rule-danger',
+            iconClass: 'icon-danger',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+            title: '<span class="hl-red">Food Safety: Seal Integrity Protocol</span>',
+            desc: 'Swarna Ghee is a 100% pure Ayurvedic food item. <strong class="hl-red">Opened jars cannot be returned</strong> for personal taste preference; genuine quality issues receive direct founder support.'
+          },
+          {
+            type: 'rule-success',
+            iconClass: 'icon-success',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+            title: '<span class="hl-green">Direct UPI Refund in 48–72 Hours</span>',
+            desc: 'Approved claims are <strong class="hl-green">refunded 100% directly to your original UPI / Bank account</strong>.'
+          }
+        ]
+      },
+      shipping: {
+        titleIcon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>',
+        titleText: 'Express Dispatch & Delivery Terms',
+        rules: [
+          {
+            type: 'rule-success',
+            iconClass: 'icon-success',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+            title: '<span class="hl-green">24–48 Hours Fresh Batch Dispatch</span>',
+            desc: 'Every jar is fresh batch packed in airtight glass jars and dispatched within <strong class="hl-green">24 to 48 hours from Himachal Pradesh</strong>.'
+          },
+          {
+            type: 'rule-success',
+            iconClass: 'icon-success',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>',
+            title: '<span class="hl-dark">Pan-India Live Tracking & SMS Alerts</span>',
+            desc: 'Live tracking link with <strong class="hl-green">SMS & WhatsApp updates</strong> is shared as soon as Delhivery / BlueDart picks up your parcel.'
+          }
+        ]
+      },
+      purity: {
+        titleIcon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>',
+        titleText: '100% Authentic A2 Vedic Guarantee',
+        rules: [
+          {
+            type: 'rule-success',
+            iconClass: 'icon-success',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M8 2h8v3H8zM6 5h12v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1z"/></svg>',
+            title: '<span class="hl-green">Cultured Gir Cow Curd (Bilona Only)</span>',
+            desc: 'Handcrafted strictly from <strong class="hl-green">cultured curd (Dahi)</strong> using 5-step wooden churner, <strong class="hl-red">never from industrial cream</strong>.'
+          },
+          {
+            type: 'rule-success',
+            iconClass: 'icon-success',
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2"><path d="M4.5 3h15M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3M6 14h12"/></svg>',
+            title: '<span class="hl-green">Lab Certified 100% Purity</span>',
+            desc: '<strong class="hl-green">Zero preservatives, zero palm oil, zero synthetic colors</strong>. 100% Ayurvedic golden grain purity.'
+          }
+        ]
+      }
+    };
+
+    function openPolicyModal(type) {
+      const data = policyData[type];
+      if (!data) return;
+
+      const modal = document.getElementById('policy-info-modal');
+      const titleWrap = document.getElementById('policy-modal-title-wrap');
+      const body = document.getElementById('policy-modal-body');
+
+      titleWrap.innerHTML = data.titleIcon + '<span>' + data.titleText + '</span>';
+      body.innerHTML = data.rules.map(rule => `
+        <div class="policy-rule-item ${rule.type || ''}">
+          <div class="rule-icon-box ${rule.iconClass || ''}">${rule.icon}</div>
+          <div class="rule-text-box">
+            <h4>${rule.title}</h4>
+            <p>${rule.desc}</p>
+          </div>
+        </div>
+      `).join('');
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+
+
+    function closePolicyModal() {
+      const modal = document.getElementById('policy-info-modal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handlePdpBuyNow() {
+      handlePdpAdd();
+      window.location.href = 'checkout.html?size=' + currentSelectedSize;
+    }
+  
+    function handlePdpAdd() {
+      let imgPath = './images/swarna-500ml.jpg';
+      if (currentSelectedSize === '250ml') imgPath = './images/swarna-250ml.jpg';
+      else if (currentSelectedSize === '1000ml') imgPath = './images/swarna-1000ml.jpg';
+
+      const item = {
+        id: 'swarna-a2-ghee-' + currentSelectedSize,
+        name: 'Organic Bilona A2 Gir Cow Ghee',
+        size: currentSelectedSize,
+        price: currentSelectedPrice,
+        image: imgPath
+      };
+      if (window.addToCart) {
+        window.addToCart(item, 1);
+      }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const sizeParam = urlParams.get('size');
+    if (sizeParam === '1000ml') {
+      const btn1L = document.querySelectorAll('.pdp-size-btn')[2];
+      if (btn1L) selectPdpSize('1000ml', 1999, 2500, '20% OFF', btn1L);
+    } else if (sizeParam === '250ml') {
+      const btn250 = document.querySelectorAll('.pdp-size-btn')[0];
+      if (btn250) selectPdpSize('250ml', 599, 750, '20% OFF', btn250);
+    }
+  </script>
+
+  
+  
+  
+    </div>
+  </div>
+</body>
+</html>

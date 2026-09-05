@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Express Checkout | Swarna Pure A2 Vedic Ghee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ==========================================================================
+       COMPLETE PRISTINE LUXURY CHECKOUT (APPLE / SHOPIFY STANDARD)
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100% !important;
+      max-width: 100vw !important;
+      overflow-x: hidden !important;
+      background: #f8fafc !important;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Minimal Top Navigation */
+    .lux-nav {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 12px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+      width: 100%;
+    }
+
+    .lux-nav-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 clamp(8px, 2vw, 24px);
+    }
+
+    .lux-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #475569;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .lux-back-btn:hover {
+      color: #0f172a;
+    }
+
+    .lux-secure-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #059669;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Main Container */
+    .lux-checkout-container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: clamp(20px, 3.5vw, 40px) clamp(14px, 3vw, 36px) 70px;
+      width: 100%;
+    }
+
+    .lux-layout-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: clamp(20px, 2.5vw, 36px);
+      align-items: start;
+      width: 100%;
+    }
+
+    @media (max-width: 860px) {
+      .lux-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .lux-checkout-container {
+        padding: 14px 12px 60px;
+      }
+    }
+
+    /* Card Styling */
+    .lux-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 18px 16px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+      width: 100%;
+    }
+
+    .lux-card-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .lux-card-title-row svg {
+      color: #059669;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+    }
+
+    .lux-card-title {
+      font-family: 'DM Sans', -apple-system, sans-serif !important;
+      font-size: 0.94rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.1px;
+    }
+
+    /* Form Elements */
+    .lux-form-group {
+      margin-bottom: 12px;
+      width: 100%;
+    }
+
+    .lux-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+    }
+
+    @media (max-width: 500px) {
+      .lux-form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .lux-label {
+      display: block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #475569;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    .lux-input, .lux-textarea {
+      width: 100%;
+      height: 42px;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 0 12px;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 0.88rem;
+      color: #0f172a;
+      outline: none;
+      transition: all 0.2s ease;
+      display: block;
+    }
+
+    .lux-textarea {
+      height: 60px;
+      padding: 8px 12px;
+      resize: vertical;
+    }
+
+    .lux-input:focus, .lux-textarea:focus {
+      background: #ffffff;
+      border-color: #059669;
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
+    }
+
+    /* Phone Input with +91 Prefix */
+    .lux-phone-wrap {
+      display: flex;
+      align-items: center;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 100%;
+      height: 42px;
+      transition: all 0.2s ease;
+    }
+
+    .lux-phone-wrap:focus-within {
+      background: #ffffff;
+      border-color: #059669;
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.12);
+    }
+
+    .lux-phone-prefix {
+      padding: 0 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #64748b;
+      background: #f1f5f9;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid #cbd5e1;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .lux-phone-input {
+      border: none !important;
+      box-shadow: none !important;
+      background: transparent !important;
+      flex: 1;
+      height: 100%;
+      padding: 0 10px;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 0.88rem;
+      color: #0f172a;
+      outline: none;
+      min-width: 0;
+    }
+
+    /* Save Profile Checkbox */
+    .lux-save-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 10px 0 0;
+      cursor: pointer;
+    }
+
+    .lux-save-toggle input {
+      accent-color: #059669;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .lux-save-toggle span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    /* Ultra-Compact Payment Cards */
+    .lux-pay-card {
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #f8fafc;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .lux-pay-card.selected {
+      border-color: #059669;
+      background: #f0fdf4;
+    }
+
+    .lux-pay-radio {
+      margin-top: 3px;
+      accent-color: #059669;
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .lux-pay-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .lux-pay-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .lux-pay-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .lux-pay-sub {
+      font-size: 0.72rem;
+      color: #64748b;
+      margin-top: 2px;
+      line-height: 1.3;
+    }
+
+    .lux-pay-badge {
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .badge-free {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .badge-fee {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    /* Order Summary Card */
+    .lux-item-preview {
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f1f5f9;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    .lux-item-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
+      background: #fafaf9;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+      padding: 2px;
+      flex-shrink: 0;
+    }
+
+    .lux-item-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .lux-item-info {
+      min-width: 0;
+    }
+
+    .lux-item-info h4 {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 2px;
+      line-height: 1.25;
+      word-break: break-word;
+    }
+
+    .lux-item-variant {
+      font-size: 0.70rem;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .lux-item-price {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+
+    /* Breakdown Rows */
+    .lux-price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.80rem;
+      color: #475569;
+      margin-bottom: 5px;
+    }
+
+    .lux-price-row.total-row {
+      font-size: 1.12rem;
+      font-weight: 900;
+      color: #0f172a;
+      padding-top: 8px;
+      border-top: 1.5px solid #e2e8f0;
+      margin-top: 8px;
+    }
+
+    /* WhatsApp Confirm Button */
+    .lux-whatsapp-submit {
+      width: 100%;
+      height: 44px;
+      background: #25D366;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: #ffffff;
+      border-radius: 8px;
+      border: none;
+      font-family: 'DM Sans', sans-serif !important;
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      cursor: pointer;
+      white-space: nowrap !important;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+      text-transform: uppercase;
+      margin-top: 14px;
+    }
+
+    .lux-whatsapp-submit:hover {
+      background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+    }
+
+    /* Trust Shield Strip */
+    .lux-trust-strip {
+      margin-top: 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      width: 100%;
+    }
+
+    .lux-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .lux-trust-item svg {
+      color: #059669;
+      flex-shrink: 0;
+      width: 13px;
+      height: 13px;
+    }
+
+    /* Success Card View */
+    #lux-success-card {
+      display: none;
+      text-align: center;
+      padding: 30px 18px;
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+      max-width: 500px;
+      margin: 20px auto;
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="luxury-checkout-body">
+
+  <!-- Minimal Luxury Navigation Header -->
+  <header class="lux-nav">
+    <div class="lux-nav-inner">
+      <a href="product.html" class="lux-back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Back</span>
+      </a>
+      <div class="lux-secure-pill">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span>Secure</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Checkout Container -->
+  <main class="lux-checkout-container">
+    
+    <!-- Active Checkout Form -->
+    <form id="lux-checkout-form">
+      <div class="lux-layout-grid" id="lux-main-grid">
+        
+        <!-- Left Column: Shipping & Delivery Info -->
+        <div class="lux-left-col">
+          
+          <!-- Delivery Details Card -->
+          <div class="lux-card" style="margin-bottom: 14px;">
+            <div class="lux-card-title-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <h2 class="lux-card-title">Delivery Details</h2>
+            </div>
+
+            <div class="lux-form-row">
+              <div class="lux-form-group">
+                <label class="lux-label" for="cust-name">Full Name *</label>
+                <input type="text" id="cust-name" class="lux-input" placeholder="e.g. Ramesh Sharma" required />
+              </div>
+              <div class="lux-form-group">
+                <label class="lux-label" for="cust-phone">WhatsApp Number *</label>
+                <div class="lux-phone-wrap">
+                  <div class="lux-phone-prefix">+91</div>
+                  <input type="tel" id="cust-phone" class="lux-phone-input" placeholder="98765 43210" maxlength="10" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="lux-form-group">
+              <label class="lux-label" for="cust-address">Flat, House No, Street, Landmark *</label>
+              <input type="text" id="cust-address" class="lux-input" placeholder="e.g. Flat 402, Green Valley Apt, MG Road" required />
+            </div>
+
+            <div class="lux-form-row">
+              <div class="lux-form-group">
+                <label class="lux-label" for="cust-pincode">PIN Code *</label>
+                <input type="text" id="cust-pincode" class="lux-input" placeholder="e.g. 171001" maxlength="6" required />
+              </div>
+              <div class="lux-form-group">
+                <label class="lux-label" for="cust-city">City & State *</label>
+                <input type="text" id="cust-city" class="lux-input" placeholder="e.g. Shimla, HP" required />
+              </div>
+            </div>
+
+            <label class="lux-save-toggle">
+              <input type="checkbox" id="save-info-chk" checked />
+              <span>Save my information for 1-click future orders</span>
+            </label>
+          </div>
+
+          <!-- Payment Mode Card -->
+          <div class="lux-card">
+            <div class="lux-card-title-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              <h2 class="lux-card-title">Payment Method</h2>
+            </div>
+
+            <!-- Option 1: COD -->
+            <div class="lux-pay-card selected" id="pay-opt-cod" onclick="setPayMethod('COD')">
+              <input type="radio" name="lux-pay" id="radio-cod" value="COD" class="lux-pay-radio" checked />
+              <div class="lux-pay-content">
+                <div class="lux-pay-header-row">
+                  <span class="lux-pay-title">Cash on Delivery (COD)</span>
+                  <span class="lux-pay-badge badge-fee">+₹25 COD Fee</span>
+                </div>
+                <div class="lux-pay-sub">Pay via Cash or UPI QR scan upon delivery at doorstep</div>
+              </div>
+            </div>
+
+            <!-- Option 2: Online UPI -->
+            <div class="lux-pay-card" id="pay-opt-online" onclick="setPayMethod('ONLINE')">
+              <input type="radio" name="lux-pay" id="radio-online" value="ONLINE" class="lux-pay-radio" />
+              <div class="lux-pay-content">
+                <div class="lux-pay-header-row">
+                  <span class="lux-pay-title">Direct UPI / Instant Online Pay</span>
+                  <span class="lux-pay-badge badge-free">Zero Extra Fee</span>
+                </div>
+                <div class="lux-pay-sub">GPay, PhonePe, Paytm, or QR &bull; 100% Free &bull; Priority dispatch</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Order Summary & WhatsApp Action -->
+        <div class="lux-right-col">
+          <div class="lux-card" style="position: sticky; top: 70px;">
+            <div class="lux-card-title-row">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <h2 class="lux-card-title">Order Summary</h2>
+            </div>
+
+            <!-- Items List -->
+            <div id="lux-items-container">
+              <!-- Rendered via JS -->
+            </div>
+
+            <!-- Price Breakdown -->
+            <div style="margin-top: 10px;">
+              <div class="lux-price-row">
+                <span>Items Subtotal</span>
+                <span id="lbl-subtotal">₹1,099</span>
+              </div>
+              <div class="lux-price-row">
+                <span>Pan-India Express Shipping</span>
+                <span style="color: #059669; font-weight: 800;">FREE</span>
+              </div>
+              <div class="lux-price-row">
+                <span>COD Verification Fee</span>
+                <span id="lbl-cod-fee" style="font-weight: 700; color: #d97706;">+₹25</span>
+              </div>
+              <div class="lux-price-row total-row">
+                <span>Total Payable</span>
+                <span id="lbl-grand-total">₹1,124</span>
+              </div>
+            </div>
+
+            <!-- WhatsApp Action Button -->
+            <button type="submit" class="lux-whatsapp-submit">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path>
+                <path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path>
+              </svg>
+              <span>Confirm Order on WhatsApp</span>
+            </button>
+
+            <!-- Trust Guarantees -->
+            <div class="lux-trust-strip">
+              <div class="lux-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>100% Pure Himachal Bilona Curd Churned</span>
+              </div>
+              <div class="lux-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Airtight Glass Jar with Free Transit Insurance</span>
+              </div>
+              <div class="lux-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 8"/></svg>
+                <span>Dispatched within 24–48 hrs via BlueDart / Delhivery</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+    <!-- Success Screen (Shown after placing order) -->
+    <div id="lux-success-card">
+      <div style="margin-bottom: 12px; display: flex; justify-content: center;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="16 9 10 15 7 12"></polyline>
+        </svg>
+      </div>
+      <h2 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-bottom: 4px;">Order Details Generated!</h2>
+      <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 14px;">
+        Ref ID: <strong id="success-ref-num" style="color: #b45309;">SWARNA-849201</strong>
+      </p>
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; text-align: left; margin-bottom: 16px; font-size: 0.80rem; color: #334155;" id="success-summary-body">
+      </div>
+      <a id="success-whatsapp-link" href="#" target="_blank" class="lux-whatsapp-submit" style="text-decoration: none; margin-bottom: 10px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg>
+        <span>Open WhatsApp Chat Directly</span>
+      </a>
+      <a href="index.html" style="color: #64748b; font-size: 0.78rem; font-weight: 700; text-decoration: none;">&larr; Return to Store</a>
+    </div>
+
+  </main>
+
+  <script>
+    let cartItems = [];
+    let paymentMode = 'COD'; // 'COD' or 'ONLINE'
+
+    // Load Cart or PDP Variant
+    function initCheckout() {
+      try {
+        const saved = localStorage.getItem('swarna_cart');
+        if (saved) cartItems = JSON.parse(saved);
+      } catch (e) {}
+
+      if (!cartItems || cartItems.length === 0) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const size = urlParams.get('size') || '500ml';
+        const priceMap = { '250ml': 599, '500ml': 1099, '1000ml': 1999 };
+        const price = priceMap[size] || 1099;
+        cartItems = [{
+          name: 'Organic Bilona A2 Gir Cow Ghee',
+          size: size,
+          price: price,
+          quantity: 1,
+          image: './images/swarna-' + size + '.jpg'
+        }];
+      }
+
+      renderCart();
+      loadStoredProfile();
+    }
+
+    // Render Order Item Preview
+    function renderCart() {
+      const container = document.getElementById('lux-items-container');
+      if (!container) return;
+
+      let subtotal = 0;
+      container.innerHTML = cartItems.map(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        const img = item.image || './images/swarna-500ml.jpg';
+        return `
+          <div class="lux-item-preview">
+            <div class="lux-item-img">
+              <img src="${img}" alt="${item.name}" onerror="this.src='./images/ghee-jar.png'" />
+            </div>
+            <div class="lux-item-info">
+              <h4>${item.name}</h4>
+              <div class="lux-item-variant">Size: ${(item.size || '500ml').toUpperCase()} • Qty: ${item.quantity}</div>
+            </div>
+            <div class="lux-item-price">₹${itemTotal.toLocaleString('en-IN')}</div>
+          </div>
+        `;
+      }).join('');
+
+      const codFee = paymentMode === 'COD' ? 25 : 0;
+      const total = subtotal + codFee;
+
+      document.getElementById('lbl-subtotal').textContent = '₹' + subtotal.toLocaleString('en-IN');
+      document.getElementById('lbl-cod-fee').textContent = paymentMode === 'COD' ? '+₹25' : '₹0 (FREE)';
+      document.getElementById('lbl-cod-fee').style.color = paymentMode === 'COD' ? '#d97706' : '#059669';
+      document.getElementById('lbl-grand-total').textContent = '₹' + total.toLocaleString('en-IN');
+    }
+
+    // Payment Mode Switching
+    function setPayMethod(mode) {
+      paymentMode = mode;
+      document.getElementById('radio-cod').checked = (mode === 'COD');
+      document.getElementById('radio-online').checked = (mode === 'ONLINE');
+
+      const cardCod = document.getElementById('pay-opt-cod');
+      const cardOnline = document.getElementById('pay-opt-online');
+
+      if (mode === 'COD') {
+        cardCod.classList.add('selected');
+        cardOnline.classList.remove('selected');
+      } else {
+        cardOnline.classList.add('selected');
+        cardCod.classList.remove('selected');
+      }
+      renderCart();
+    }
+
+    // Load Persistent Profile from LocalStorage
+    function loadStoredProfile() {
+      try {
+        const data = localStorage.getItem('swarna_user_profile');
+        if (data) {
+          const profile = JSON.parse(data);
+          if (profile.name) document.getElementById('cust-name').value = profile.name;
+          if (profile.phone) document.getElementById('cust-phone').value = profile.phone;
+          if (profile.address) document.getElementById('cust-address').value = profile.address;
+          if (profile.pincode) document.getElementById('cust-pincode').value = profile.pincode;
+          if (profile.city) document.getElementById('cust-city').value = profile.city;
+        }
+      } catch (e) {}
+    }
+
+    // Form Submission & WhatsApp Redirect
+    document.getElementById('lux-checkout-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('cust-name').value.trim();
+      const phone = document.getElementById('cust-phone').value.trim();
+      const address = document.getElementById('cust-address').value.trim();
+      const pincode = document.getElementById('cust-pincode').value.trim();
+      const city = document.getElementById('cust-city').value.trim();
+
+      if (document.getElementById('save-info-chk').checked) {
+        try {
+          localStorage.setItem('swarna_user_profile', JSON.stringify({ name, phone, address, pincode, city }));
+        } catch (e) {}
+      }
+
+      let subtotal = 0;
+      let itemsText = '';
+      cartItems.forEach(item => {
+        const cost = item.price * item.quantity;
+        subtotal += cost;
+        itemsText += `• ${item.name} (${item.size || '500ml'}) × ${item.quantity} = ₹${cost.toLocaleString('en-IN')}\n`;
+      });
+
+      const codFee = paymentMode === 'COD' ? 25 : 0;
+      const grandTotal = subtotal + codFee;
+      const refId = 'SWARNA-' + Math.floor(100000 + Math.random() * 900000);
+      const payText = paymentMode === 'COD' ? 'Cash on Delivery (+₹25)' : 'Direct UPI / Online (100% Free)';
+
+      const waMsg = 
+`🛍️ *NEW SWARNA PURE A2 GHEE ORDER*
+*Ref ID:* ${refId}
+----------------------------------------
+*📦 ORDERED ITEMS:*
+${itemsText}*💰 Total Payable:* ₹${grandTotal.toLocaleString('en-IN')}
+*🚚 Delivery:* FREE Express (Dispatched from HP)
+*💳 Payment Mode:* ${payText}
+----------------------------------------
+*👤 CUSTOMER & DELIVERY DETAILS:*
+• *Name:* ${name}
+• *Phone:* +91 ${phone}
+• *Address:* ${address}
+• *City / State:* ${city}
+• *PIN Code:* ${pincode}
+----------------------------------------
+_Please confirm my order for immediate fresh batch dispatch!_`;
+
+      const waUrl = `https://wa.me/917018168156?text=${encodeURIComponent(waMsg)}`;
+
+      try {
+        localStorage.removeItem('swarna_cart');
+      } catch (e) {}
+
+      document.getElementById('lux-main-grid').style.display = 'none';
+      const successCard = document.getElementById('lux-success-card');
+      successCard.style.display = 'block';
+      document.getElementById('success-ref-num').textContent = refId;
+      document.getElementById('success-whatsapp-link').href = waUrl;
+
+      document.getElementById('success-summary-body').innerHTML = `
+        <div style="margin-bottom: 6px;"><strong>Customer:</strong> ${name} (+91 ${phone})</div>
+        <div style="margin-bottom: 6px;"><strong>Delivery Address:</strong> ${address}, ${city} - ${pincode}</div>
+        <div style="margin-bottom: 6px;"><strong>Payment Mode:</strong> ${payText}</div>
+        <div><strong>Total Payable:</strong> <span style="font-size: 1.05rem; color: #059669; font-weight: 800;">₹${grandTotal.toLocaleString('en-IN')}</span></div>
+      `;
+
+      setTimeout(() => {
+        window.open(waUrl, '_blank');
+      }, 350);
+    });
+
+    // Initializer that runs immediately if DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCheckout);
+    } else {
+      initCheckout();
+    }
+  </script>
+</body>
+</html>

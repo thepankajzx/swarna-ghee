@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "id": "sw-a2-500",
+      "title": "A2 Gir Cow Bilona Ghee",
+      "subtitle": "500ml Family Jar",
+      "sku": "SW-A2-500",
+      "price": 1099,
+      "mrp": 1400,
+      "discount": "21% off",
+      "image": "./images/swarna-500ml.jpg",
+      "link": "product.html?size=500ml",
+      "badge": "Best Seller",
+      "rating": 4.9,
+      "reviews": 128,
+      "category": "bilona",
+      "description": "100% Pure Cultured A2 Gir Cow Curd Butter. Traditional Vedic Bilona Hand-Churning.",
+      "visible": true
+    },
+    {
+      "id": "sw-a2-1000",
+      "title": "A2 Gir Cow Bilona Ghee",
+      "subtitle": "1000ml (1L) Value Pack",
+      "sku": "SW-A2-1000",
+      "price": 1999,
+      "mrp": 2500,
+      "discount": "20% off",
+      "image": "./images/swarna-1000ml.jpg",
+      "link": "product.html?size=1000ml",
+      "badge": "Best Value",
+      "rating": 5.0,
+      "reviews": 56,
+      "category": "1000ml",
+      "description": "100% Pure Indigenous Gir Cow A2 Bilona Ghee. Best value for families.",
+      "visible": true
+    },
+    {
+      "id": "sw-a2-250",
+      "title": "A2 Gir Cow Bilona Ghee",
+      "subtitle": "250ml Starter Jar",
+      "sku": "SW-A2-250",
+      "price": 599,
+      "mrp": 750,
+      "discount": "20% off",
+      "image": "./images/swarna-500ml.jpg",
+      "link": "product.html?size=250ml",
+      "badge": "Starter Jar",
+      "rating": 4.8,
+      "reviews": 38,
+      "category": "250ml",
+      "description": "Perfect starter pack. Hand-Churned in Brass Vessels.",
+      "visible": true
+    },
+    {
+      "id": "sw-danedar-500",
+      "title": "Vedic Danedar Ghee",
+      "subtitle": "Brass Simmered • 500ml",
+      "sku": "SW-DAN-500",
+      "price": 1399,
+      "mrp": 1800,
+      "discount": "22% off",
+      "image": "./images/swarna-250ml.jpg",
+      "link": "product.html?size=500ml",
+      "badge": "Wood Fired",
+      "rating": 4.9,
+      "reviews": 29,
+      "category": "danedar",
+      "description": "Golden Danedar Ghee — A2 Vedic Churned with natural granular texture.",
+      "visible": true
+    }
+  ],
+  "settings": {
+    "fssai_number": "",
+    "maker_households": "12+",
+    "maker_districts": "3",
+    "maker_method": "100% Bilona Method",
+    "verify_page_note": "Lab report will be uploaded here. Contact us for batch details."
+  },
+  "batches": [],
+  "media": {
+    "himalayan_image": "",
+    "makers_video": "",
+    "process_video": ""
+  }
+}

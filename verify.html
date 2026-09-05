@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Our Promise — Swarna A2 Bilona Ghee</title>
+  <meta name="description" content="Swarna's commitment to purity. Verify your batch, view lab reports, and check our FSSAI registration." />
+  <link rel="icon" href="./images/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Playfair+Display:ital,wght@0,600..900;1,600..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" type="module"></script>
+  <style>
+    /* ── Verify page specific styles ── */
+    .verify-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f172a 100%);
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .verify-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(212,175,55,0.12) 0%, transparent 70%);
+    }
+    .verify-hero-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--color-gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .verify-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #fff;
+      margin: 0 0 16px;
+      line-height: 1.2;
+    }
+    .verify-hero p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.05rem;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .verify-body {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* FSSAI Block */
+    .fssai-block {
+      background: #f8f6f1;
+      border: 1.5px solid #e8dfc6;
+      border-radius: 16px;
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .fssai-shield {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #d4af37, #b8960c);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .fssai-shield svg { color: #fff; }
+    .fssai-info h3 {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      margin: 0 0 4px;
+    }
+    .fssai-info .fssai-number {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: 0.04em;
+    }
+    .fssai-info p {
+      font-size: 0.82rem;
+      color: #666;
+      margin: 4px 0 0;
+    }
+    .fssai-placeholder {
+      color: #aaa;
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    /* Promises Grid */
+    .promises-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #0f172a;
+      margin: 0 0 8px;
+    }
+    .promises-section .section-sub {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0 0 32px;
+    }
+    .promises-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+    .promise-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 14px;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .promise-icon {
+      width: 48px;
+      height: 48px;
+      background: #f8f6f1;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      color: #d4af37;
+      font-size: 1.5rem;
+    }
+    .promise-card h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 6px;
+      letter-spacing: 0.03em;
+    }
+    .promise-card p {
+      font-size: 0.8rem;
+      color: #666;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Lab Report Section */
+    .lab-section { margin-bottom: 56px; }
+    .lab-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #0f172a;
+      margin: 0 0 8px;
+    }
+    .lab-section .section-sub {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0 0 28px;
+    }
+    .lab-report-placeholder {
+      background: linear-gradient(135deg, #f8f6f1, #fdf9f0);
+      border: 2px dashed #d4af37;
+      border-radius: 16px;
+      padding: 48px 32px;
+      text-align: center;
+    }
+    .lab-report-placeholder .ph-icon {
+      font-size: 3rem;
+      color: #d4af37;
+      margin-bottom: 16px;
+    }
+    .lab-report-placeholder h3 {
+      font-size: 1.1rem;
+      color: #0f172a;
+      margin: 0 0 8px;
+    }
+    .lab-report-placeholder p {
+      color: #888;
+      font-size: 0.88rem;
+      max-width: 400px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+    .lab-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0f172a;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .lab-download-btn:hover { background: #1e293b; }
+    .lab-download-btn.disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* Batch Table */
+    .batch-section { margin-bottom: 56px; }
+    .batch-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #0f172a;
+      margin: 0 0 8px;
+    }
+    .batch-section .section-sub {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0 0 24px;
+    }
+    .batch-table-wrap {
+      border: 1px solid #eee;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .batch-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .batch-table th {
+      background: #0f172a;
+      color: #d4af37;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 20px;
+      text-align: left;
+    }
+    .batch-table td {
+      padding: 14px 20px;
+      font-size: 0.88rem;
+      color: #333;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .batch-table tr:last-child td { border-bottom: none; }
+    .batch-table tr:hover td { background: #fafaf8; }
+    .batch-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .batch-status.pending {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .batch-report-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #d4af37;
+      font-weight: 600;
+      font-size: 0.82rem;
+      text-decoration: none;
+    }
+    .batch-report-link:hover { text-decoration: underline; }
+    .batch-empty {
+      text-align: center;
+      padding: 48px 24px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    /* Contact block */
+    .verify-contact-block {
+      background: #0f172a;
+      border-radius: 16px;
+      padding: 40px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .verify-contact-block h3 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin: 0 0 6px;
+    }
+    .verify-contact-block p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+    .verify-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 28px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      .fssai-block { flex-direction: column; text-align: center; }
+      .batch-table th, .batch-table td { padding: 10px 12px; font-size: 0.78rem; }
+      .verify-contact-block { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body class="product-page-body">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <span class="announcement-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          <span>Free Pan-India Express Delivery on All Orders</span>
+        </span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+917018168156">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>Call: +91 7018168156</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <button class="nav-round-btn header-menu-btn" aria-label="Toggle Navigation Menu" onclick="window.openNavDrawer ? window.openNavDrawer() : document.getElementById('nav-drawer').classList.add('active')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+        </button>
+        <a href="index.html" class="brand-logo-clean"><span class="brand-title">Swarna</span></a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Featured Drop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="verify.html" class="active">Our Promise</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="cart-btn" class="nav-round-btn cart-round-btn" aria-label="Shopping Bag" onclick="window.openCart ? window.openCart() : document.getElementById('cart-drawer').classList.add('active')">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="verify-hero">
+    <p class="verify-hero-label">Transparency First</p>
+    <h1>Nothing to hide.<br>Everything to show.</h1>
+    <p>Every jar of Swarna carries our promise of purity. Verify your batch, download lab reports, and understand exactly what goes into your ghee.</p>
+  </div>
+
+  <div class="verify-body">
+
+    <!-- FSSAI Block -->
+    <div class="fssai-block" id="fssai-block">
+      <div class="fssai-shield">
+        <svg width="28" height="28" viewBox="0 0 256 256" fill="currentColor"><path d="M208,40H48A16,16,0,0,0,32,56V200a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V56A16,16,0,0,0,208,40Zm0,160H48V56H208ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></svg>
+      </div>
+      <div class="fssai-info">
+        <h3>FSSAI Registration Number</h3>
+        <div class="fssai-number" id="fssai-number-display">
+          <span class="fssai-placeholder">Will be updated once registered</span>
+        </div>
+        <p>Food Safety and Standards Authority of India — Government of India</p>
+      </div>
+    </div>
+
+    <!-- Promises Grid -->
+    <div class="promises-section">
+      <h2>Our Quality Commitments</h2>
+      <p class="section-sub">What we verify in every single batch before it reaches you</p>
+      <div class="promises-grid">
+        <div class="promise-card">
+          <div class="promise-icon">
+            <svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208ZM82.34,149.66a8,8,0,0,1,11.32-11.32L112,156.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z"/></svg>
+          </div>
+          <h4>Baudouin Test</h4>
+          <p>Confirms zero vegetable oil or vanaspati adulteration in your ghee</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">
+            <svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M243.31,90.91l-128.4-64.2a16,16,0,0,0-14.62,0l-128.4,64.2A8,8,0,0,0,0,98.17v16a8,8,0,0,0,8,8H24v88a8,8,0,0,0,8,8H224a8,8,0,0,0,8-8V122.17h16a8,8,0,0,0,8-8V98.17A8,8,0,0,0,243.31,90.91Z"/></svg>
+          </div>
+          <h4>RM Value</h4>
+          <p>Reichert-Meissl Value confirms genuine dairy butterfat (min. 24)</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">
+            <svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm40-68a28,28,0,0,1-28,28v8a8,8,0,0,1-16,0v-8a44.05,44.05,0,0,1-44-44,8,8,0,0,1,16,0,28,28,0,0,0,28,28h24a12,12,0,0,0,0-24H104a28,28,0,0,1,0-56h8V72a8,8,0,0,1,16,0v8h4a44.05,44.05,0,0,1,44,44Z"/></svg>
+          </div>
+          <h4>Fat Purity %</h4>
+          <p>Milk fat content verified at 99.5%+ per FSSAI standards</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">
+            <svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M96,208a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H88A8,8,0,0,1,96,208Zm40-84.69L60.69,198.63A16,16,0,0,1,38.06,176L120,94.06l-5.37-5.37A16,16,0,0,1,137.37,66l5.37,5.37,18.34-18.34a16,16,0,0,1,22.63,0l16,16a16,16,0,0,1,0,22.63Z"/></svg>
+          </div>
+          <h4>Bilona Verified</h4>
+          <p>Process documentation confirms hand-churning — no machine separation</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">
+            <svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M200,168a32.06,32.06,0,0,1-31,32H112v16a8,8,0,0,1-16,0V200H64A32,32,0,0,1,64,136H88V112H64A32,32,0,0,1,64,48h32V32a8,8,0,0,1,16,0V48h57a32,32,0,0,1,0,64H136v24h33A32.06,32.06,0,0,1,200,168Z"/></svg>
+          </div>
+          <h4>Moisture Level</h4>
+          <p>Low moisture confirms proper processing and shelf-life stability</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon">
+            <svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M243.31,90.91l-128.4-64.2a16,16,0,0,0-14.62,0l-128.4,64.2A8,8,0,0,0,0,98.17v16a8,8,0,0,0,8,8H24V208a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V122.17h16a8,8,0,0,0,8-8V98.17A8,8,0,0,0,243.31,90.91ZM216,208H40V122.17H216ZM128,48.18l80,40V106.17H48V88.18Z"/></svg>
+          </div>
+          <h4>A2 Breed Source</h4>
+          <p>Sourced exclusively from Gir cow herds in Himachal Pradesh</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lab Report Section -->
+    <div class="lab-section">
+      <h2>Lab Reports</h2>
+      <p class="section-sub">Download batch-specific test reports — updated as new batches are released</p>
+      <div class="lab-report-placeholder" id="lab-report-area">
+        <div class="ph-icon">
+          <svg width="48" height="48" viewBox="0 0 256 256" fill="#d4af37"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Zm-40-80a8,8,0,0,1-8,8H104a8,8,0,0,1,0-16h48A8,8,0,0,1,160,136Zm0,32a8,8,0,0,1-8,8H104a8,8,0,0,1,0-16h48A8,8,0,0,1,160,168Z"/></svg>
+        </div>
+        <h3>Lab Report Coming Soon</h3>
+        <p>We are in the process of getting our ghee tested at a certified lab. The report will be available for download here once ready.</p>
+        <a href="https://wa.me/917018168156?text=I%20want%20to%20know%20about%20the%20lab%20report%20for%20Swarna%20ghee" class="lab-download-btn" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path></svg>
+          Ask Us on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Batch Log Table -->
+    <div class="batch-section">
+      <h2>Batch Log</h2>
+      <p class="section-sub">Every production run is recorded. Find your batch number on the bottom of your jar.</p>
+      <div class="batch-table-wrap">
+        <table class="batch-table">
+          <thead>
+            <tr>
+              <th>Batch ID</th>
+              <th>Production Date</th>
+              <th>Size</th>
+              <th>Status</th>
+              <th>Lab Report</th>
+            </tr>
+          </thead>
+          <tbody id="batch-tbody">
+            <tr>
+              <td colspan="5" class="batch-empty">
+                <svg width="32" height="32" viewBox="0 0 256 256" fill="#ccc" style="display:block;margin:0 auto 8px"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"/></svg>
+                Batch records will appear here as production begins
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Contact Block -->
+    <div class="verify-contact-block">
+      <div>
+        <h3>Have a question about your batch?</h3>
+        <p>We respond to all purity queries within 24 hours. No automated bots — real people.</p>
+      </div>
+      <a href="https://wa.me/917018168156?text=I%20have%20a%20query%20about%20my%20Swarna%20ghee%20batch" class="verify-wa-btn" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+
+  </div><!-- end verify-body -->
+
+  <!-- Footer -->
+      <!-- Site Ultra-Compact Footer -->
+    <!-- Site Ultra-Compact Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-compact-row">
+        <!-- Brand & Tagline -->
+        <div class="footer-brand-box">
+          <span class="footer-brand-name">Swarna</span>
+          <span class="footer-brand-tagline">100% Pure Vedic A2 Gir Cow Bilona Ghee</span>
+        </div>
+
+        <!-- Quick Links (Inline) -->
+        <div class="footer-nav-inline">
+          <a href="index.html">Home</a>
+          <span class="f-dot">&bull;</span>
+          <a href="product.html">Featured Drop</a>
+          <span class="f-dot">&bull;</span>
+          <a href="about.html">Our Story</a>
+          <span class="f-dot">&bull;</span>
+          <a href="verify.html">Our Promise</a>
+          <span class="f-dot">&bull;</span>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Help Pill -->
+        <div class="footer-action-box">
+          <a href="https://wa.me/917018168156?text=Hello%20Swarna%20Care,%20I%20need%20help%20with%20my%20order%20or%20products." 
+             class="footer-wa-card" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             aria-label="Contact Swarna Care on WhatsApp">
+            <div class="footer-wa-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.25-1.92 1.33-.5.08-1.15.11-3.69-.94-2.17-.9-3.57-3.11-3.68-3.26-.11-.15-.88-1.17-.88-2.23 0-1.06.56-1.58.76-1.8.2-.22.44-.28.59-.28.15 0 .3 0 .43.01.14.01.32-.05.5.39.19.46.65 1.58.71 1.7.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.25.25-.11.49.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.18 1.26z"/>
+              </svg>
+            </div>
+            <div class="footer-wa-text">
+              <span class="f-wa-title" data-en="Need Help?" data-hi="सहायता?">Need Help?</span>
+              <span class="f-wa-sub" data-en="Chat with us" data-hi="चैट करें">Chat with us</span>
+            </div>
+            <div class="footer-wa-arrow">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Line: Copyright & Admin -->
+      <div class="footer-bottom">
+        <div>© 2026 Swarna. All Rights Reserved. &bull; Himachal Pradesh</div>
+        <div class="footer-admin-wrap">
+          <a href="admin.html" class="footer-admin-link" title="Admin Portal">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <span>Admin</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay" onclick="window.closeCart ? window.closeCart() : document.getElementById('cart-drawer').classList.remove('active')"></div>
+  <div id="cart-drawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-main-title">YOUR BAG</h2>
+      <button id="close-cart-btn" class="nav-round-btn cart-close-btn" aria-label="Close Bag" onclick="window.closeCart ? window.closeCart() : document.getElementById('cart-drawer').classList.remove('active')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="cart-drawer-body" id="cart-drawer-body"></div>
+  </div>
+
+  <!-- Nav Drawer -->
+  <div id="nav-drawer-overlay" class="nav-drawer-overlay" onclick="window.closeNavDrawer ? window.closeNavDrawer() : document.getElementById('nav-drawer').classList.remove('active')"></div>
+  <div id="nav-drawer" class="nav-drawer-card">
+    <div class="nav-drawer-header">
+      <div class="drawer-brand-title">Swarna</div>
+      <button id="nav-drawer-close" class="nav-round-btn drawer-close-btn" aria-label="Close Menu" onclick="window.closeNavDrawer ? window.closeNavDrawer() : document.getElementById('nav-drawer').classList.remove('active')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="drawer-vip-card" onclick="location.href='index.html#shop-collection'">
+      <div class="vip-user-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </div>
+      <div class="vip-info">
+        <div class="vip-title">My Profile & Orders</div>
+        <div class="vip-sub">Track orders & account details &rarr;</div>
+      </div>
+    </div>
+    <div class="drawer-section-label">NAVIGATION</div>
+    <div class="drawer-nav-list">
+      <a href="index.html" class="drawer-nav-item"><span class="d-item-text">LATEST DROPS (A2 GHEE)</span></a>
+      <a href="product.html?size=500ml" class="drawer-nav-item item-highlight"><span class="d-item-text">FEATURED DROP (500ML)</span><span class="drawer-badge-purple">POPULAR</span></a>
+      <a href="about.html" class="drawer-nav-item"><span class="d-item-text">OUR BILONA HERITAGE</span></a>
+      <a href="verify.html" class="drawer-nav-item"><span class="d-item-text">OUR PROMISE & VERIFY</span></a>
+      <a href="contact.html" class="drawer-nav-item"><span class="d-item-text">CONTACT CARE & DISPATCH</span></a>
+    </div>
+    <div class="drawer-section-label" style="margin-top: 24px;">ASSISTANCE & POLICIES</div>
+    <div class="drawer-grid-buttons">
+      <a href="contact.html" class="drawer-pill-btn"><span>7-Day Return</span></a>
+      <a href="contact.html" class="drawer-pill-btn"><span>Shipping/COD</span></a>
+      <a href="verify.html" class="drawer-pill-btn"><span>Lab Reports</span></a>
+      <a href="https://wa.me/917018168156" target="_blank" class="drawer-pill-btn"><span>WhatsApp</span></a>
+    </div>
+    <!-- Language Toggle -->
+    <div class="lang-toggle-wrap">
+      <span class="lang-toggle-label">Language</span>
+      <div class="lang-toggle-btns">
+        <button class="lang-btn active" id="lang-en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" id="lang-hi" onclick="setLanguage('hi')">हिंदी</button>
+      </div>
+    </div>
+  </div>
+
+    
+
+  <script src="app.js"></script>
+  <script>
+    // Load dynamic data from products.json
+    fetch('/api/products').then(r => r.json()).then(data => {
+      const s = data.settings || {};
+      if (s.fssai_number) {
+        document.getElementById('fssai-number-display').textContent = s.fssai_number;
+      }
+      const batches = data.batches || [];
+      const tbody = document.getElementById('batch-tbody');
+      if (batches.length > 0) {
+        tbody.innerHTML = batches.map(b => `
+          <tr>
+            <td><strong>${b.id}</strong></td>
+            <td>${b.date}</td>
+            <td>${b.size || 'All Sizes'}</td>
+            <td><span class="batch-status ${b.report ? '' : 'pending'}">${b.report ? '✓ Tested' : 'Pending'}</span></td>
+            <td>${b.report ? `<a href="${b.report}" class="batch-report-link" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download PDF</a>` : '<span style="color:#aaa;font-size:0.8rem">Not yet uploaded</span>'}</td>
+          </tr>
+        `).join('');
+      }
+    }).catch(() => {});
+  </script>
+  
+  
+    </div>
+  </div>
+</body>
+</html>

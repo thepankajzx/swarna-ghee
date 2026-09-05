@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Swarna | Pure A2 Bilona Ghee</title>
+  <meta name="description" content="Shop 100% pure A2 Gir Cow Bilona Ghee made using traditional Vedic methods with zero preservatives." />
+  <link rel="icon" href="./images/logo.png" type="image/png" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..900;1,9..40,400..900&family=Playfair+Display:ital,wght@0,600..900;1,600..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="product-page-body">
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-left">
+        <span class="announcement-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13"></rect>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+          </svg>
+          <span>Free Pan-India Express Delivery on All Orders</span>
+        </span>
+      </div>
+      <div class="top-bar-right">
+        <a href="tel:+917018168156">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>Call: +91 7018168156</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Left Group: Menu Button + Gold Brand Name (Tight Spacing) -->
+      <div class="header-left">
+        <button class="nav-round-btn header-menu-btn" aria-label="Toggle Navigation Menu" onclick="window.openNavDrawer ? window.openNavDrawer() : document.getElementById('nav-drawer').classList.add('active')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="7" x2="20" y2="7"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="17" x2="20" y2="17"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-logo-clean">
+          <span class="brand-title">Swarna</span>
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="product.html">Featured Drop</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right: Sleek Round Search, Heart/Wishlist & Bag/Cart Buttons -->
+      <div class="header-actions">
+        <!-- Search Button -->
+        <a href="javascript:void(0)" class="nav-round-btn" aria-label="Search Products" onclick="document.querySelector('.modern-product-grid').scrollIntoView({behavior: 'smooth'})">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+
+        <!-- Wishlist / Heart Button -->
+        <button class="nav-round-btn wishlist-toggle-btn" aria-label="Wishlist" onclick="alert('Pure Swarna A2 Ghee added to your favorites!')">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </button>
+
+        <!-- Bag / Cart Button -->
+        <button id="cart-btn" class="nav-round-btn cart-round-btn" aria-label="Shopping Bag" onclick="window.openCart ? window.openCart() : document.getElementById('cart-drawer').classList.add('active')">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Carousel Mount Container -->
+  <div id="my-custom-carousel"></div>
+
+  <!-- Luxury Dark Marquee Ticker (Exact Match to Reference Style) -->
+  <div class="luxury-marquee-strip">
+    <div class="luxury-marquee-track">
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> 100% PURE A2 GIR COW BILONA GHEE</span>
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> HAND-CHURNED IN WOODEN BILONA</span>
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> ZERO CHEMICALS & LAB TESTED</span>
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> SLOW FIREWOOD HEATING IN BRASS</span>
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> FREE PAN-INDIA EXPRESS SHIPPING</span>
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> ETHICAL AHIMSA CARE & PASTURE GRAZED</span>
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> 100% PURE A2 GIR COW BILONA GHEE</span>
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> HAND-CHURNED IN WOODEN BILONA</span>
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> ZERO CHEMICALS & LAB TESTED</span>
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> SLOW FIREWOOD HEATING IN BRASS</span>
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> FREE PAN-INDIA EXPRESS SHIPPING</span>
+      <span class="marquee-pill-item"><span class="marquee-dot"></span> ETHICAL AHIMSA CARE & PASTURE GRAZED</span>
+    </div>
+  </div>
+
+  
+  <!-- Trust Strip -->
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8M8 12h8"></path></svg></div>
+        <h4>Traditional Bilona</h4><p>Curd churned method</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3M2 21h20"></path></svg></div>
+        <h4>100% Gir Cow</h4><p>Indigenous A2 breed</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+        <h4>0% Chemicals</h4><p>No added preservatives</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+        <h4>Danedar Texture</h4><p>Rich aroma & grains</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 11-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 002.5 2.5z"></path></svg></div>
+        <h4>Slow Fire Made</h4><p>Small artisanal batches</p>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></div>
+        <h4>100% Pure</h4><p>100% natural</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horizontal Category Stories / Circle Avatars (With Clean Vertical Gap) -->
+  <section class="category-stories-section">
+    <div class="container">
+      <div class="category-stories-track">
+        <!-- Story 1: All Drops -->
+        <div class="category-story-item active" onclick="filterCategoryDrops('all', this)">
+          <div class="category-story-ring">
+            <div class="category-story-img-wrap">
+              <img src="./images/swarna-500ml.jpg" alt="All Drops" />
+            </div>
+          </div>
+          <span class="category-story-label">All Drops</span>
+        </div>
+
+        <!-- Story 2: A2 Bilona -->
+        <div class="category-story-item" onclick="filterCategoryDrops('bilona', this)">
+          <div class="category-story-ring">
+            <div class="category-story-img-wrap">
+              <img src="./images/bilona-churning.jpg" alt="A2 Bilona" />
+            </div>
+          </div>
+          <span class="category-story-label">A2 Bilona</span>
+        </div>
+
+        <!-- Story 3: Golden Danedar -->
+        <div class="category-story-item" onclick="filterCategoryDrops('danedar', this)">
+          <div class="category-story-ring">
+            <div class="category-story-img-wrap">
+              <img src="./images/golden-ghee.jpg" alt="Danedar Gold" />
+            </div>
+          </div>
+          <span class="category-story-label">Danedar Gold</span>
+        </div>
+
+        <!-- Story 4: 1L Value Pack -->
+        <div class="category-story-item" onclick="filterCategoryDrops('1000ml', this)">
+          <div class="category-story-ring">
+            <div class="category-story-img-wrap">
+              <img src="./images/swarna-1000ml.jpg" alt="1L Mega Pack" />
+            </div>
+          </div>
+          <span class="category-story-label">1L Mega Pack</span>
+        </div>
+
+        <!-- Story 5: Starter 250ml -->
+        <div class="category-story-item" onclick="filterCategoryDrops('250ml', this)">
+          <div class="category-story-ring">
+            <div class="category-story-img-wrap">
+              <img src="./images/swarna-250ml.jpg" alt="250ml Starter" />
+            </div>
+          </div>
+          <span class="category-story-label">Starter 250ml</span>
+        </div></div></div></div></section>
+
+  <!-- Direct Modern 2-Column Product Grid -->
+  <section id="shop-collection" class="collection-section" style="padding-top: 6px;">
+    <div class="container">
+      <div class="archive-header-row">
+        <h2 class="archive-header-title">ARCHIVE DROPS</h2>
+        <div class="archive-filter-pill" onclick="alert('Sorting: Featured Collection');">
+          <span>Featured</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </div>
+
+      <div class="modern-product-grid" id="dynamic-product-grid">
+        <!-- Products will be injected here via API -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       HIMALAYAN DIFFERENCE SECTION
+  ════════════════════════════════════════════════ -->
+  <section class="himalayan-section">
+    <div class="container">
+      <div class="himalayan-left">
+        <span class="himalayan-tag">The Himalayan Advantage</span>
+        <h2 class="himalayan-title" data-en="Your ghee grazes where the herbs grow wild" data-hi="जहाँ जड़ी-बूटियाँ उगती हैं, वहाँ से आती है आपकी घी">Your ghee grazes where the herbs grow wild</h2>
+        <p class="himalayan-desc" data-en="Our Gir cows don't graze on dusty plains — they roam freely across the foothills of Himachal Pradesh, where Himalayan herbs, wild grasses, and clean glacial water are simply part of the landscape. This terroir cannot be replicated. No plains farm can offer this." data-hi="हमारी गिर गायें धूल भरे मैदानों में नहीं चरतीं — वे हिमाचल प्रदेश की तलहटियों में स्वतंत्र रूप से विचरती हैं, जहाँ हिमालयी जड़ी-बूटियाँ, जंगली घास और स्वच्छ हिमनद जल परिदृश्य का हिस्सा हैं।">Our Gir cows don't graze on dusty plains — they roam freely across the foothills of Himachal Pradesh, where Himalayan herbs, wild grasses, and clean glacial water are simply part of the landscape. This terroir cannot be replicated. No plains farm can offer this.</p>
+        <div class="himalayan-stats">
+          <div class="himalayan-stat">
+            <div class="himalayan-stat-value" id="stat-households">12+</div>
+            <div class="himalayan-stat-label">Artisan<br>Households</div>
+          </div>
+          <div class="himalayan-stat">
+            <div class="himalayan-stat-value" id="stat-districts">3</div>
+            <div class="himalayan-stat-label">Himachal<br>Districts</div>
+          </div>
+          <div class="himalayan-stat">
+            <div class="himalayan-stat-value">100%</div>
+            <div class="himalayan-stat-label">Bilona<br>Method</div>
+          </div>
+        </div>
+      </div>
+      <div class="himalayan-right">
+        <div class="himalayan-img-wrap" id="himalayan-img-wrap">
+          <div class="himalayan-img-placeholder" id="himalayan-placeholder">
+            <svg width="48" height="48" viewBox="0 0 256 256" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="8"><path d="M220 176L160 80 116 144 84 112 36 176Z"/><rect x="24" y="24" width="208" height="208" rx="16"/></svg>
+            <span>Himalayan landscape image<br><small>Upload via Admin Panel</small></span>
+          </div>
+          <div class="himalayan-herbs">
+            <span class="herb-pill"><span class="herb-dot"></span> Wild Brahmi</span>
+            <span class="herb-pill"><span class="herb-dot"></span> Mountain Thyme</span>
+            <span class="herb-pill"><span class="herb-dot"></span> Banslochan</span>
+            <span class="herb-pill"><span class="herb-dot"></span> Wild Turmeric</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       7 WAYS SWARNA HEALS
+  ════════════════════════════════════════════════ -->
+  <section class="heals-section">
+    <div class="container">
+      <div class="heals-header">
+        <span class="heals-section-tag">Beyond Cooking</span>
+        <h2 class="heals-title" data-en="7 Ways Swarna Heals" data-hi="7 तरीके जिनसे स्वर्ण घी लाभ देती है">7 Ways Swarna Heals</h2>
+        <p class="heals-subtitle" data-en="Pure A2 Bilona Ghee is not just a cooking ingredient. For generations, it has been a complete household remedy — your kitchen's best-kept secret." data-hi="शुद्ध A2 बिलोना घी सिर्फ खाना पकाने की सामग्री नहीं है। पीढ़ियों से यह एक पूर्ण घरेलू उपाय रहा है।">Pure A2 Bilona Ghee is not just a cooking ingredient. For generations, it has been a complete household remedy — your kitchen's best-kept secret.</p>
+      </div>
+                  <div class="heals-horizontal-track">
+        
+        <!-- 1. Cooking -->
+        <div class="heal-slide-card">
+          <div class="heal-slide-img">
+            <div class="heal-slide-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            </div>
+          </div>
+          <div class="heal-slide-content">
+            <h3 data-en="<span>01</span> Pure Cooking" data-hi="<span>01</span> शुद्ध खाना पकाना"><span>01</span> Pure Cooking</h3>
+            <p data-en="High smoke point, rich flavor. Replaces refined oils completely. Safe for high-heat tadka and slow cooking alike." data-hi="उच्च स्मोक पॉइंट, समृद्ध स्वाद। परिष्कृत तेलों को पूरी तरह से बदलता है।">High smoke point, rich flavor. Replaces refined oils completely. Safe for high-heat tadka and slow cooking alike.</p>
+          </div>
+        </div>
+
+        <!-- 2. Baby Massage -->
+        <div class="heal-slide-card">
+          <div class="heal-slide-img">
+            <div class="heal-slide-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            </div>
+          </div>
+          <div class="heal-slide-content">
+            <h3 data-en="<span>02</span> Baby Massage" data-hi="<span>02</span> शिशु मालिश"><span>02</span> Baby Massage</h3>
+            <p data-en="Warm ghee massaged gently on newborns strengthens bones and nourishes skin. A generations-old Indian tradition." data-hi="नवजात शिशुओं पर गर्म घी की मालिश हड्डियों को मजबूत बनाती है और त्वचा को पोषण देती है।">Warm ghee massaged gently on newborns strengthens bones and nourishes skin. A generations-old Indian tradition.</p>
+          </div>
+        </div>
+
+        <!-- 3. Nasal & Cold -->
+        <div class="heal-slide-card">
+          <div class="heal-slide-img">
+            <div class="heal-slide-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            </div>
+          </div>
+          <div class="heal-slide-content">
+            <h3 data-en="<span>03</span> Nasal Relief" data-hi="<span>03</span> नाक से राहत"><span>03</span> Nasal Relief</h3>
+            <p data-en="A few warm drops of ghee in each nostril clears congestion and soothes dry passages. Ancient Ayurvedic remedy." data-hi="प्रत्येक नथुने में गर्म घी की कुछ बूंदें जमाव को साफ करती हैं।">A few warm drops of ghee in each nostril clears congestion and soothes dry passages. Ancient Ayurvedic remedy.</p>
+          </div>
+        </div>
+
+        <!-- 4. Chest/Body Rub -->
+        <div class="heal-slide-card">
+          <div class="heal-slide-img">
+            <div class="heal-slide-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            </div>
+          </div>
+          <div class="heal-slide-content">
+            <h3 data-en="<span>04</span> Chest & Body Warmth" data-hi="<span>04</span> छाती व शरीर की गर्माहट"><span>04</span> Chest & Body Warmth</h3>
+            <p data-en="Warm ghee rubbed on the chest and back during cold or fever provides deep warmth and relief. No chemicals." data-hi="सर्दी या बुखार के दौरान छाती और पीठ पर गर्म घी की मालिश गहरी गर्माहट देती है।">Warm ghee rubbed on the chest and back during cold or fever provides deep warmth and relief. No chemicals.</p>
+          </div>
+        </div>
+
+        <!-- 5. Hair Oiling -->
+        <div class="heal-slide-card">
+          <div class="heal-slide-img">
+            <div class="heal-slide-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            </div>
+          </div>
+          <div class="heal-slide-content">
+            <h3 data-en="<span>05</span> Hair Nourishment" data-hi="<span>05</span> बालों का पोषण"><span>05</span> Hair Nourishment</h3>
+            <p data-en="Warm ghee massaged into the scalp reduces dryness, frizz, and promotes healthy hair growth." data-hi="खोपड़ी में गर्म घी की मालिश रूखापन कम करती है और स्वस्थ बालों के विकास को बढ़ाती है।">Warm ghee massaged into the scalp reduces dryness, frizz, and promotes healthy hair growth.</p>
+          </div>
+        </div>
+
+        <!-- 6. Cracked Heels -->
+        <div class="heal-slide-card">
+          <div class="heal-slide-img">
+            <div class="heal-slide-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            </div>
+          </div>
+          <div class="heal-slide-content">
+            <h3 data-en="<span>06</span> Cracked Heels" data-hi="<span>06</span> फटी एड़ियाँ"><span>06</span> Cracked Heels</h3>
+            <p data-en="Apply ghee on cracked heels before sleeping — nature's deepest moisturizer. No petroleum, no parabens." data-hi="सोने से पहले फटी एड़ियों पर घी लगाएं — प्रकृति का सबसे गहरा मॉइस्चराइजर।">Apply ghee on cracked heels before sleeping — nature's deepest moisturizer. No petroleum, no parabens.</p>
+          </div>
+        </div>
+
+        <!-- 7. Diya / Lamp -->
+        <div class="heal-slide-card">
+          <div class="heal-slide-img">
+            <div class="heal-slide-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            </div>
+          </div>
+          <div class="heal-slide-content">
+            <h3 data-en="<span>07</span> Diya & Sacred Lamp" data-hi="<span>07</span> दीया व लैंप"><span>07</span> Diya & Sacred Lamp</h3>
+            <p data-en="Pure ghee burns clean with no soot — the traditional choice for diyas, havan, and religious ceremonies." data-hi="शुद्ध घी बिना कालिख के जलती है — दीयों, हवन और धार्मिक समारोहों के लिए पारंपरिक विकल्प।">Pure ghee burns clean with no soot — the traditional choice for diyas, havan, and religious ceremonies.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-section-header">
+        <span class="comparison-tag">Questions, Answered</span>
+        <h2 class="comparison-title" data-en="Everything You'd Like To Know" data-hi="वह सब कुछ जो आप जानना चाहेंगे">Everything You'd Like To Know</h2>
+        <p class="comparison-subtitle" data-en="Still curious? Our ghee care team is always here to assist your wellness journey." data-hi="अभी भी उत्सुक हैं? हमारी घी देखभाल टीम आपकी वेलनेस यात्रा में सहायता के लिए हमेशा मौजूद है।">Still curious? Our ghee care team is always here to assist your wellness journey.</p>
+      </div>
+      <div class="faq-container">
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-en="What makes Bilona Ghee different?" data-hi="बिलोना घी को क्या अलग बनाता है?">What makes Bilona Ghee different?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer" data-en="Traditional Bilona Ghee begins with cultured curd, which is churned with a wooden bilona to separate fresh butter and then slowly heated over low fire. This patient method gives the ghee its distinctive nutty aroma, granular texture, and superior bio-availability." data-hi="पारंपरिक बिलोना घी की शुरुआत कल्चर्ड दही से होती है, जिसे लकड़ी के बिलोना से मथा जाता है।">Traditional Bilona Ghee begins with cultured curd, which is churned with a wooden bilona to separate fresh butter and then slowly heated over low fire. This patient method gives the ghee its distinctive nutty aroma, granular texture, and superior bio-availability.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-en="Is Swarna ghee made only from indigenous (Desi) cows?" data-hi="क्या स्वर्ण घी केवल स्वदेशी गायों से बना है?">Is Swarna ghee made only from indigenous (Desi) cows?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer" data-en="Yes, absolutely. We source our milk exclusively from purebred, pasture-grazed Gir cows in Himachal Pradesh." data-hi="हाँ बिल्कुल।">Yes, absolutely. We source our milk exclusively from purebred, pasture-grazed Gir cows in Himachal Pradesh.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-en="Why does the texture change with the season?" data-hi="मौसम के साथ बनावट क्यों बदलती है?">Why does the texture change with the season?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer" data-en="Pure ghee melts in summer and solidifies in winter. The famous 'danedar' (granular) texture is a natural property of A2 Bilona ghee, proving it has not been homogenized or artificially stabilized." data-hi="शुद्ध घी गर्मियों में पिघल जाता है और सर्दियों में जम जाता है।">Pure ghee melts in summer and solidifies in winter. The famous 'danedar' (granular) texture is a natural property of A2 Bilona ghee, proving it has not been homogenized or artificially stabilized.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span data-en="Does it contain preservatives or artificial colors?" data-hi="क्या इसमें परिरक्षक या कृत्रिम रंग हैं?">Does it contain preservatives or artificial colors?</span>
+            <div class="faq-icon">+</div>
+          </div>
+          <div class="faq-answer" data-en="Zero. Swarna Ghee is 100% pure and natural, free from any preservatives, colors, or chemical additives." data-hi="शून्य। स्वर्ण घी 100% शुद्ध और प्राकृतिक है।">Zero. Swarna Ghee is 100% pure and natural, free from any preservatives, colors, or chemical additives.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- Site Ultra-Compact Footer -->
+    <!-- Site Ultra-Compact Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-compact-row">
+        <!-- Brand & Tagline -->
+        <div class="footer-brand-box">
+          <span class="footer-brand-name">Swarna</span>
+          <span class="footer-brand-tagline">100% Pure Vedic A2 Gir Cow Bilona Ghee</span>
+        </div>
+
+        <!-- Quick Links (Inline) -->
+        <div class="footer-nav-inline">
+          <a href="index.html">Home</a>
+          <span class="f-dot">&bull;</span>
+          <a href="product.html">Featured Drop</a>
+          <span class="f-dot">&bull;</span>
+          <a href="about.html">Our Story</a>
+          <span class="f-dot">&bull;</span>
+          <a href="verify.html">Our Promise</a>
+          <span class="f-dot">&bull;</span>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Help Pill -->
+        <div class="footer-action-box">
+          <a href="https://wa.me/917018168156?text=Hello%20Swarna%20Care,%20I%20need%20help%20with%20my%20order%20or%20products." 
+             class="footer-wa-card" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             aria-label="Contact Swarna Care on WhatsApp">
+            <div class="footer-wa-icon">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.07c-.24.68-1.4 1.25-1.92 1.33-.5.08-1.15.11-3.69-.94-2.17-.9-3.57-3.11-3.68-3.26-.11-.15-.88-1.17-.88-2.23 0-1.06.56-1.58.76-1.8.2-.22.44-.28.59-.28.15 0 .3 0 .43.01.14.01.32-.05.5.39.19.46.65 1.58.71 1.7.06.12.1.26.02.42-.08.16-.12.26-.24.4-.12.14-.25.31-.36.42-.12.12-.25.25-.11.49.14.24.63 1.04 1.35 1.68.93.83 1.71 1.09 1.95 1.21.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.18 1.26z"/>
+              </svg>
+            </div>
+            <div class="footer-wa-text">
+              <span class="f-wa-title" data-en="Need Help?" data-hi="सहायता?">Need Help?</span>
+              <span class="f-wa-sub" data-en="Chat with us" data-hi="चैट करें">Chat with us</span>
+            </div>
+            <div class="footer-wa-arrow">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Line: Copyright & Admin -->
+      <div class="footer-bottom">
+        <div>© 2026 Swarna. All Rights Reserved. &bull; Himachal Pradesh</div>
+        <div class="footer-admin-wrap">
+          <a href="admin.html" class="footer-admin-link" title="Admin Portal">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <span>Admin</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modern Atelier-Style Shopping Bag Drawer -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay" onclick="window.closeCart ? window.closeCart() : document.getElementById('cart-drawer').classList.remove('active')"></div>
+  <div id="cart-drawer" class="cart-drawer">
+    <div class="cart-drawer-header">
+      <h2 class="cart-drawer-main-title">YOUR BAG</h2>
+      <button id="close-cart-btn" class="nav-round-btn cart-close-btn" aria-label="Close Bag" onclick="window.closeCart ? window.closeCart() : document.getElementById('cart-drawer').classList.remove('active')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="cart-drawer-body" id="cart-drawer-body"></div>
+  </div>
+
+  <!-- Full-Screen Atelier-Style Slide-Out Navigation Drawer -->
+  <div id="nav-drawer-overlay" class="nav-drawer-overlay" onclick="window.closeNavDrawer ? window.closeNavDrawer() : document.getElementById('nav-drawer').classList.remove('active')"></div>
+  <div id="nav-drawer" class="nav-drawer-card">
+    <div class="nav-drawer-header">
+      <div class="drawer-brand-title">Swarna</div>
+      <button id="nav-drawer-close" class="nav-round-btn drawer-close-btn" aria-label="Close Menu" onclick="window.closeNavDrawer ? window.closeNavDrawer() : document.getElementById('nav-drawer').classList.remove('active')">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Clean Normal Profile Card -->
+    <div class="drawer-vip-card" onclick="location.href='index.html#shop-collection'">
+      <div class="vip-user-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </div>
+      <div class="vip-info">
+        <div class="vip-title">My Profile & Orders</div>
+        <div class="vip-sub">Track orders & account details &rarr;</div>
+      </div>
+    </div>
+
+    <div class="drawer-section-label">NAVIGATION</div>
+    <div class="drawer-nav-list">
+      <a href="index.html" class="drawer-nav-item"><span class="d-item-text">LATEST DROPS (A2 GHEE)</span></a>
+      <a href="product.html?size=500ml" class="drawer-nav-item item-highlight"><span class="d-item-text">FEATURED DROP (500ML)</span><span class="drawer-badge-purple">POPULAR</span></a>
+      <a href="about.html" class="drawer-nav-item"><span class="d-item-text">OUR BILONA HERITAGE</span></a>
+      <a href="verify.html" class="drawer-nav-item"><span class="d-item-text">OUR PROMISE & VERIFY</span></a>
+      <a href="contact.html" class="drawer-nav-item"><span class="d-item-text">CONTACT CARE & DISPATCH</span></a>
+    </div>
+
+    <div class="drawer-section-label" style="margin-top: 24px;">ASSISTANCE & POLICIES</div>
+    <div class="drawer-grid-buttons">
+      <a href="contact.html" class="drawer-pill-btn"><span>7-Day Return</span></a>
+      <a href="contact.html" class="drawer-pill-btn"><span>Shipping/COD</span></a>
+      <a href="verify.html" class="drawer-pill-btn"><span>Lab Reports</span></a>
+      <a href="https://wa.me/917018168156" target="_blank" class="drawer-pill-btn"><span>WhatsApp</span></a>
+    </div>
+
+    <!-- Language Toggle -->
+    <div class="lang-toggle-wrap">
+      <span class="lang-toggle-label">Language</span>
+      <div class="lang-toggle-btns">
+        <button class="lang-btn active" id="lang-en" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" id="lang-hi" onclick="setLanguage('hi')">हिंदी</button>
+      </div>
+    </div>
+  </div>
+
+  
+
+    
+
+
+  <script src="app.js"></script>
+
+  <script>
+    function filterCategoryDrops(category, element) {
+      document.querySelectorAll('.category-story-item').forEach(el => el.classList.remove('active'));
+      if (element) element.classList.add('active');
+      const cards = document.querySelectorAll('.m-product-card');
+      cards.forEach(card => {
+        const title = card.querySelector('.m-card-title')?.textContent.toLowerCase() || '';
+        const variant = card.querySelector('.m-variant-pill')?.textContent.toLowerCase() || '';
+        if (category === 'all') { card.style.display = 'flex'; card.style.opacity = '1'; }
+        else if (category === '1000ml') { card.style.display = (title.includes('1000ml') || title.includes('1l')) ? 'flex' : 'none'; card.style.opacity = '1'; }
+        else if (category === '250ml') { card.style.display = (title.includes('250ml') || title.includes('trial')) ? 'flex' : 'none'; card.style.opacity = '1'; }
+        else if (category === 'danedar') { card.style.display = (title.includes('500ml') || variant.includes('wood fired') || title.includes('bilona')) ? 'flex' : 'none'; card.style.opacity = '1'; }
+        else if (category === 'bilona') { card.style.display = 'flex'; card.style.opacity = '1'; }
+      });
+    }
+
+    // ── Hindi / English Toggle ──────────────────────────
+    function setLanguage(lang) {
+      document.documentElement.lang = lang === 'hi' ? 'hi' : 'en';
+      localStorage.setItem('swarna-lang', lang);
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = lang === 'hi' ? (el.dataset.hi || el.dataset.en) : el.dataset.en;
+      });
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      const btn = document.getElementById('lang-' + lang);
+      if (btn) btn.classList.add('active');
+    }
+
+    // Apply saved language on load
+    const savedLang = localStorage.getItem('swarna-lang') || 'en';
+    if (savedLang === 'hi') setLanguage('hi');
+
+    // ── Load dynamic data from products.json ──────────────────────────
+    fetch('/api/products').then(r => r.json()).then(data => {
+      const s = data.settings || {};
+      if (s.maker_households) {
+        const el = document.getElementById('stat-households');
+        if (el) el.textContent = s.maker_households;
+      }
+      if (s.maker_districts) {
+        const el = document.getElementById('stat-districts');
+        if (el) el.textContent = s.maker_districts;
+      }
+      // Load himalayan image if uploaded
+      if (data.media && data.media.himalayan_image) {
+        const wrap = document.getElementById('himalayan-img-wrap');
+        const placeholder = document.getElementById('himalayan-placeholder');
+        if (wrap && placeholder) {
+          const img = document.createElement('img');
+          img.src = data.media.himalayan_image;
+          img.style.cssText = 'width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:1;';
+          placeholder.style.display = 'none';
+          wrap.insertBefore(img, wrap.firstChild);
+          
+          // Ensure herbs stay on top
+          const herbs = wrap.querySelector('.himalayan-herbs');
+          if (herbs) herbs.style.zIndex = '2';
+        }
+      }
+
+      // Populate Product Grid
+      const grid = document.getElementById('dynamic-product-grid');
+      if (grid && data.products) {
+        const productsHTML = data.products
+          .filter(p => p.visible !== false)
+          .map(p => {
+            const hasDiscount = p.mrp > p.price;
+            const discountPercent = hasDiscount ? Math.round(((p.mrp - p.price) / p.mrp) * 100) : 0;
+            return `
+            <div class="m-product-card" onclick="location.href='${p.link || 'product.html'}'">
+              <div class="m-card-image-wrap">
+                <button class="m-wishlist-btn" aria-label="Add to wishlist" onclick="event.stopPropagation(); alert('Added to Saved Vault!');">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </button>
+                <img src="${p.image || ''}" alt="${p.title}" class="m-card-img" />
+                </div>
+              <div class="m-card-details">
+                <div class="m-price-line">
+                  <span class="m-current-price">₹${p.price.toLocaleString()}</span>
+                  ${hasDiscount ? `<span class="m-orig-price">₹${p.mrp.toLocaleString()}</span><span class="m-discount-tag">${discountPercent}% off</span>` : ''}
+                </div>
+                <div class="m-card-title">${p.title} &bull; ${p.subtitle}</div>
+              </div>
+            </div>
+            `;
+          }).join('');
+        grid.innerHTML = productsHTML;
+      }
+    }).catch(() => {});
+  </script>
+
+  <!-- Admin Panel Entry (hidden button bottom-right) -->
+  
+  
+  
+    </div>
+  </div>
+</body>
+
+</html>
+

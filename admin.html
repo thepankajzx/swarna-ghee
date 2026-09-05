@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Portal — Swarna</title>
+  <link rel="icon" href="./images/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #d4af37;
+      --dark: #0f172a;
+      --mid: #1e293b;
+      --light: #f8fafc;
+      --border: #e2e8f0;
+      --text: #334155;
+      --muted: #94a3b8;
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 10px;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: #f1f5f9; color: var(--text); min-height: 100vh; }
+
+    /* ── Login Screen ── */
+    .login-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+    .login-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .login-logo {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+    .login-logo span { color: var(--gold); }
+    .login-sub { color: var(--muted); font-size: 0.85rem; margin-bottom: 32px; }
+    .login-label { display: block; text-align: left; font-size: 0.78rem; font-weight: 600; color: var(--text); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px; }
+    .login-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+      margin-bottom: 20px;
+    }
+    .login-input:focus { border-color: var(--gold); }
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--dark);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      letter-spacing: 0.06em;
+      transition: background 0.2s;
+    }
+    .login-btn:hover { background: #1e293b; }
+    .login-error { color: var(--danger); font-size: 0.82rem; margin-top: 12px; display: none; }
+
+    /* ── Admin App ── */
+    .admin-app { display: none; min-height: 100vh; }
+    .admin-sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 240px;
+      height: 100vh;
+      background: var(--dark);
+      padding: 28px 0;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar-brand {
+      padding: 0 24px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 16px;
+    }
+    .sidebar-brand-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+    }
+    .sidebar-brand-name span { color: var(--gold); }
+    .sidebar-brand-sub { font-size: 0.72rem; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; text-transform: uppercase; }
+    .sidebar-nav { flex: 1; padding: 0 12px; }
+    .sidebar-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      border-radius: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+      margin-bottom: 4px;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+    }
+    .sidebar-nav-item:hover { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.9); }
+    .sidebar-nav-item.active { background: rgba(212,175,55,0.15); color: var(--gold); }
+    .sidebar-nav-item svg { opacity: 0.7; flex-shrink: 0; }
+    .sidebar-nav-item.active svg { opacity: 1; }
+    .sidebar-footer {
+      padding: 16px 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .sidebar-logout {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.8rem;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: inherit;
+      transition: color 0.2s;
+    }
+    .sidebar-logout:hover { color: var(--danger); }
+
+    .admin-main {
+      margin-left: 240px;
+      min-height: 100vh;
+      padding: 36px 40px;
+    }
+    .admin-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 32px;
+    }
+    .admin-page-title { font-size: 1.6rem; font-weight: 700; color: var(--dark); }
+    .admin-page-sub { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+
+    /* Tabs */
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Cards */
+    .admin-card {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .admin-card-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Form elements */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-row.three { grid-template-columns: 1fr 1fr 1fr; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 0.75rem; font-weight: 600; color: var(--text); letter-spacing: 0.04em; text-transform: uppercase; }
+    .form-input {
+      padding: 10px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-family: inherit;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus { border-color: var(--gold); }
+    .form-input[type="number"] { -moz-appearance: textfield; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 8px; font-size: 0.83rem; font-weight: 600; font-family: inherit; cursor: pointer; border: none; letter-spacing: 0.04em; transition: all 0.15s; }
+    .btn-primary { background: var(--dark); color: #fff; }
+    .btn-primary:hover { background: var(--mid); }
+    .btn-gold { background: var(--gold); color: var(--dark); }
+    .btn-gold:hover { background: #c9a12a; }
+    .btn-danger { background: #fff; color: var(--danger); border: 1.5px solid #fecaca; }
+    .btn-danger:hover { background: #fef2f2; }
+    .btn-sm { padding: 7px 14px; font-size: 0.78rem; }
+    .btn-ghost { background: none; color: var(--muted); border: 1.5px solid var(--border); }
+    .btn-ghost:hover { color: var(--dark); border-color: #cbd5e1; }
+
+    /* Product Table */
+    .prod-table-wrap { overflow-x: auto; }
+    .prod-table { width: 100%; border-collapse: collapse; }
+    .prod-table th { padding: 12px 16px; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: left; border-bottom: 1px solid var(--border); }
+    .prod-table td { padding: 14px 16px; font-size: 0.85rem; color: var(--text); border-bottom: 1px solid #f8fafc; vertical-align: middle; }
+    .prod-table tr:last-child td { border-bottom: none; }
+    .prod-table tr:hover td { background: #fafaf8; }
+    .prod-img-thumb { width: 48px; height: 48px; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); }
+    .prod-img-placeholder { width: 48px; height: 48px; background: #f1f5f9; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .visibility-toggle { cursor: pointer; }
+    .badge-visible { background: #dcfce7; color: #166534; font-size: 0.7rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+    .badge-hidden { background: #f1f5f9; color: var(--muted); font-size: 0.7rem; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+
+    /* Edit modal */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      width: 100%;
+      max-width: 580px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .modal-title { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 24px; }
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      background: #f1f5f9;
+      border: none;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .modal-footer { display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px; }
+
+    /* Upload boxes */
+    .upload-box {
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+    .upload-box:hover, .upload-box.drag-over { border-color: var(--gold); background: #fffbeb; }
+    .upload-box input[type="file"] { display: none; }
+    .upload-icon { font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
+    .upload-title { font-size: 0.9rem; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+    .upload-sub { font-size: 0.78rem; color: var(--muted); }
+    .upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .upload-preview { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; margin-top: 10px; display: none; }
+    .upload-preview.visible { display: block; }
+    .upload-filename { font-size: 0.78rem; color: var(--success); margin-top: 8px; display: none; }
+    .upload-filename.visible { display: block; }
+    .upload-progress { height: 4px; background: #e2e8f0; border-radius: 2px; margin-top: 12px; display: none; }
+    .upload-progress.visible { display: block; }
+    .upload-progress-bar { height: 100%; background: var(--gold); border-radius: 2px; transition: width 0.3s; }
+
+    /* Settings form */
+    .settings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    /* Batch table */
+    .batch-table-admin { width: 100%; border-collapse: collapse; }
+    .batch-table-admin th { padding: 10px 14px; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; text-align: left; border-bottom: 1px solid var(--border); }
+    .batch-table-admin td { padding: 12px 14px; font-size: 0.83rem; border-bottom: 1px solid #f8fafc; }
+    .add-batch-form { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr auto; gap: 12px; align-items: end; margin-bottom: 20px; }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      background: var(--dark);
+      color: #fff;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      z-index: 9999;
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast.success { background: var(--success); }
+    .toast.error { background: var(--danger); }
+
+    @media (max-width: 768px) {
+      .admin-sidebar { width: 200px; }
+      .admin-main { margin-left: 200px; padding: 24px; }
+      .form-row, .form-row.three { grid-template-columns: 1fr; }
+      .upload-grid { grid-template-columns: 1fr; }
+      .settings-grid { grid-template-columns: 1fr; }
+      .add-batch-form { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Login Screen -->
+<div class="login-screen" id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">Swarna<span>.</span></div>
+    <p class="login-sub">Admin Portal — Authorized Access Only</p>
+    <label class="login-label" for="admin-pw">Password</label>
+    <input type="password" id="admin-pw" class="login-input" placeholder="Enter admin password" onkeydown="if(event.key==='Enter') doLogin()" />
+    <button class="login-btn" onclick="doLogin()">Sign In</button>
+    <p class="login-error" id="login-error">Incorrect password. Try again.</p>
+  </div>
+</div>
+
+<!-- Admin App -->
+<div class="admin-app" id="admin-app">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-brand-name">Swarna<span>.</span></div>
+      <div class="sidebar-brand-sub">Admin Portal</div>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="sidebar-nav-item active" onclick="showTab('products')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Products
+      </button>
+      <button class="sidebar-nav-item" onclick="showTab('media')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        Media & Videos
+      </button>
+      <button class="sidebar-nav-item" onclick="showTab('reports')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Lab Reports & Batches
+      </button>
+      <button class="sidebar-nav-item" onclick="showTab('settings')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings & Content
+      </button>
+      <hr style="border:none;border-top:1px solid rgba(255,255,255,0.08);margin:16px 0"/>
+      <a href="index.html" target="_blank" class="sidebar-nav-item" style="text-decoration:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        View Website
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="sidebar-logout" onclick="doLogout()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="admin-main">
+
+    <!-- ── Products Tab ── -->
+    <div class="tab-panel active" id="tab-products">
+      <div class="admin-topbar">
+        <div>
+          <div class="admin-page-title">Products</div>
+          <div class="admin-page-sub">Manage product listings, prices, and visibility</div>
+        </div>
+        <button class="btn btn-gold" onclick="openAddProduct()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Add Product
+        </button>
+      </div>
+      <div class="admin-card">
+        <div class="prod-table-wrap">
+          <table class="prod-table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>SKU</th>
+                <th>Price</th>
+                <th>MRP</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="products-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <button class="btn btn-primary" onclick="saveProducts()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          Save All Changes
+        </button>
+      </div>
+    </div>
+
+    <!-- ── Media Tab ── -->
+    <div class="tab-panel" id="tab-media">
+      <div class="admin-topbar">
+        <div>
+          <div class="admin-page-title">Media & Videos</div>
+          <div class="admin-page-sub">Upload images and videos for specific page sections</div>
+        </div>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Page Images
+        </div>
+        <div class="upload-grid">
+          <div>
+            <p style="font-size:0.8rem;color:#64748b;margin-bottom:10px;font-weight:600">Himalayan Landscape (Home Page)</p>
+            <div class="upload-box" onclick="document.getElementById('up-himalayan').click()">
+              <input type="file" id="up-himalayan" accept="image/*" onchange="handleUpload(this,'himalayan_image','prev-himalayan','fn-himalayan')">
+              <div class="upload-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              </div>
+              <div class="upload-title">Click to upload image</div>
+              <div class="upload-sub">PNG, JPG, WEBP — max 10MB</div>
+              <div class="upload-progress" id="prog-himalayan"><div class="upload-progress-bar" style="width:0%"></div></div>
+            </div>
+            <img class="upload-preview" id="prev-himalayan" />
+            <p class="upload-filename" id="fn-himalayan"></p>
+          </div>
+          <div>
+            <p style="font-size:0.8rem;color:#64748b;margin-bottom:10px;font-weight:600">Product Image (Upload to Images folder)</p>
+            <div class="upload-box" onclick="document.getElementById('up-product-img').click()">
+              <input type="file" id="up-product-img" accept="image/*" onchange="handleUpload(this,'product_image','prev-prod','fn-prod')">
+              <div class="upload-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+              </div>
+              <div class="upload-title">Upload product image</div>
+              <div class="upload-sub">PNG, JPG, WEBP — max 10MB</div>
+              <div class="upload-progress" id="prog-prod"><div class="upload-progress-bar" style="width:0%"></div></div>
+            </div>
+            <img class="upload-preview" id="prev-prod" />
+            <p class="upload-filename" id="fn-prod"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <div class="admin-card-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          Videos
+        </div>
+        <div class="upload-grid">
+          <div>
+            <p style="font-size:0.8rem;color:#64748b;margin-bottom:10px;font-weight:600">Our Makers / Production Video (About Page)</p>
+            <div class="upload-box" onclick="document.getElementById('up-makers-video').click()">
+              <input type="file" id="up-makers-video" accept="video/*" onchange="handleUpload(this,'makers_video',null,'fn-makers-vid')">
+              <div class="upload-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              </div>
+              <div class="upload-title">Upload makers video</div>
+              <div class="upload-sub">MP4, WEBM — max 200MB</div>
+              <div class="upload-progress" id="prog-makers-vid"><div class="upload-progress-bar" style="width:0%"></div></div>
+            </div>
+            <p class="upload-filename" id="fn-makers-vid"></p>
+          </div>
+          <div>
+            <p style="font-size:0.8rem;color:#64748b;margin-bottom:10px;font-weight:600">Process Video (Product Page)</p>
+            <div class="upload-box" onclick="document.getElementById('up-process-video').click()">
+              <input type="file" id="up-process-video" accept="video/*" onchange="handleUpload(this,'process_video',null,'fn-process-vid')">
+              <div class="upload-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              </div>
+              <div class="upload-title">Upload process video</div>
+              <div class="upload-sub">MP4, WEBM — max 200MB</div>
+              <div class="upload-progress" id="prog-process-vid"><div class="upload-progress-bar" style="width:0%"></div></div>
+            </div>
+            <p class="upload-filename" id="fn-process-vid"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Reports Tab ── -->
+    <div class="tab-panel" id="tab-reports">
+      <div class="admin-topbar">
+        <div>
+          <div class="admin-page-title">Lab Reports & Batch Log</div>
+          <div class="admin-page-sub">Upload PDF reports and manage batch records shown on verify.html</div>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <div class="admin-card-title">Add New Batch Record</div>
+        <div class="add-batch-form">
+          <div class="form-group">
+            <label class="form-label">Batch ID</label>
+            <input type="text" class="form-input" id="new-batch-id" placeholder="SWR-2024-001" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Production Date</label>
+            <input type="date" class="form-input" id="new-batch-date" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Size(s)</label>
+            <input type="text" class="form-input" id="new-batch-size" placeholder="250ml / 500ml / 1L" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Report PDF</label>
+            <input type="file" id="new-batch-pdf" accept=".pdf" class="form-input" style="padding:7px" />
+          </div>
+          <button class="btn btn-gold" onclick="addBatch()" style="height:40px;align-self:end">Add Batch</button>
+        </div>
+        <div style="overflow-x:auto">
+          <table class="batch-table-admin">
+            <thead>
+              <tr>
+                <th>Batch ID</th>
+                <th>Date</th>
+                <th>Size</th>
+                <th>Report</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="admin-batches-tbody">
+              <tr><td colspan="5" style="text-align:center;color:#aaa;padding:24px;font-size:0.85rem">No batches yet. Add one above.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:16px;text-align:right">
+          <button class="btn btn-primary" onclick="saveBatches()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/></svg>
+            Save Batch Log
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Settings Tab ── -->
+    <div class="tab-panel" id="tab-settings">
+      <div class="admin-topbar">
+        <div>
+          <div class="admin-page-title">Settings & Content</div>
+          <div class="admin-page-sub">Update FSSAI number, maker stats, and site content</div>
+        </div>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-title">FSSAI & Legal</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">FSSAI Registration Number</label>
+            <input type="text" class="form-input" id="set-fssai" placeholder="e.g. 02826042000015" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Verify Page Note</label>
+            <input type="text" class="form-input" id="set-verify-note" placeholder="Short note shown on verify page" />
+          </div>
+        </div>
+      </div>
+      <div class="admin-card">
+        <div class="admin-card-title">Our Makers Stats (About Page)</div>
+        <div class="form-row three">
+          <div class="form-group">
+            <label class="form-label">Households Count</label>
+            <input type="text" class="form-input" id="set-households" placeholder="12+" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Districts Count</label>
+            <input type="text" class="form-input" id="set-districts" placeholder="3" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Method Label</label>
+            <input type="text" class="form-input" id="set-method" placeholder="100% Bilona Method" />
+          </div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <button class="btn btn-primary" onclick="saveSettings()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/></svg>
+          Save Settings
+        </button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- Edit Product Modal -->
+<div class="modal-overlay" id="product-modal">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-title" id="modal-title">Edit Product</div>
+    <input type="hidden" id="edit-idx" value="" />
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Product Title</label>
+        <input type="text" class="form-input" id="edit-title" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Subtitle</label>
+        <input type="text" class="form-input" id="edit-subtitle" />
+      </div>
+    </div>
+    <div class="form-row three">
+      <div class="form-group">
+        <label class="form-label">Price (₹)</label>
+        <input type="number" class="form-input" id="edit-price" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">MRP (₹)</label>
+        <input type="number" class="form-input" id="edit-mrp" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Discount Label</label>
+        <input type="text" class="form-input" id="edit-discount" placeholder="20% off" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">SKU</label>
+        <input type="text" class="form-input" id="edit-sku" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Badge</label>
+        <input type="text" class="form-input" id="edit-badge" placeholder="Best Seller" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Image Path</label>
+        <input type="text" class="form-input" id="edit-image" placeholder="./images/..." />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Link</label>
+        <input type="text" class="form-input" id="edit-link" placeholder="product.html?size=..." />
+      </div>
+    </div>
+    <div class="form-group" style="margin-bottom:16px">
+      <label class="form-label">Description</label>
+      <input type="text" class="form-input" id="edit-desc" />
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-gold" onclick="saveProductEdit()">Save Product</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>
