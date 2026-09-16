@@ -859,7 +859,7 @@ class CoverflowCarousel {
 document.addEventListener('DOMContentLoaded', () => {
   const customContainer = document.getElementById('my-custom-carousel');
   if (customContainer) {
-    fetch('/api/products')
+    fetch('/api/products').catch(() => fetch('products.json'))
       .then(res => res.json())
       .then(data => {
         const swarnaProducts = data.products
